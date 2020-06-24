@@ -49,3 +49,7 @@ cuteAlert({
 ## Dev
 
 - **Gustavo Mancuzo** - [gustavosmanc](https://github.com/gustavosmanc)
+
+## Contributors
+
+- **Leonardo Bertoncin** - [lbert1](https://github.com/lbert1)
