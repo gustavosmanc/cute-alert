@@ -100,7 +100,7 @@ function cuteAlert({ type, title, message, buttonText }) {
     font-weight: 400;
     font-size: 15px;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
   }
 
   .alert-button {
