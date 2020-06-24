@@ -2,6 +2,8 @@
 
 JS library with the purpose of providing success and error alert box messages for your website.
 
+![alt text](https://imgur.com/20yHtWI)
+
 ## Instructions
 
 - Firstly clone this repo and import both "style.css" and "app.js" into your code. (JS file must be at the end of <body> tag)
