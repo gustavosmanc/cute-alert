@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap");
+
+.alert-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0px auto;
+  padding: 0px auto;
+}
+
+.alert-frame {
+  background: #fff;
+  height: 425px;
+  width: 300px;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.alert-header {
+  display: flex;
+  flex-direction: column;
+  height: 175px;
+  align-items: flex-end;
+  justify-content: flex-star;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.alert-img {
+  align-self: center;
+  margin: auto;
+  height: 80px;
+  margin-bottom: 50px;
+}
+
+.alert-close {
+  width: 30px;
+  height: 30px;
+  background: #e4eae7;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 17.5px;
+  margin-top: -15px;
+  margin-right: -15px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: 30px;
+  transition: background 0.5s;
+}
+
+.alert-close:hover {
+  background: #fff;
+}
+
+.alert-body {
+  padding: 30px 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.alert-title {
+  font-size: 18px !important;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 35px;
+  color: #222;
+}
+
+.alert-message {
+  font-size: 15px !important;
+  color: #666;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.alert-button {
+  width: 140px;
+  margin-bottom: -2px !important;
+  height: 35px;
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 35px;
+  transition: background 0.5s;
+}
+
+.alert-button:focus {
+  outline: 0;
+}
+
+.error-bg {
+  background: #d85261;
+}
+
+.success-bg {
+  background: #2dd284;
+}
+
+.error-btn:hover {
+  background: #e5a4b4;
+}
+
+.success-btn:hover {
+  background: #6edaa4;
+}
