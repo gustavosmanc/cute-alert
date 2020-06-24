@@ -4,6 +4,7 @@ JS library with the purpose of providing success and error alert box messages fo
 
 ![img](https://i.imgur.com/9F8vukF.png)
 
+
 ## Instructions
 
 - Firstly clone this repo and import both "style.css" and "app.js" into your code. (JS file must be at the end of body tag)
@@ -42,13 +43,16 @@ cuteAlert({
 });
 ```
 
+
 ## Design
 
 - **Igor Ferrão de Souza** https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/
 
+
 ## Dev
 
 - **Gustavo Mancuzo** - [gustavosmanc](https://github.com/gustavosmanc)
+
 
 ## Contributors
 
