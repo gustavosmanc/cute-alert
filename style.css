@@ -9,7 +9,6 @@
   justify-content: center;
   margin: 0px auto;
   padding: 0px auto;
-  background: rgb(0, 0, 0, 0.3);
   left: 0;
   top: 0;
   overflow: hidden;
@@ -34,10 +33,10 @@
 }
 
 .alert-img {
-  align-self: center;
-  margin: auto;
   height: 80px;
-  margin-bottom: 50px;
+  align-self: center;
+  position: absolute;
+  margin-top: 45;
 }
 
 .alert-close {
