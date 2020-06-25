@@ -1,7 +1,7 @@
 // Design by Igor Ferrão de Souza: https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/
 
 function cuteAlert({ type, title, message, buttonText }) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const body = document.querySelector("body");
 
     if (!buttonText) {
@@ -13,9 +13,12 @@ function cuteAlert({ type, title, message, buttonText }) {
     if (type === "error") {
       bg = "error-bg";
       btn = "error-btn";
+    } else if (type === "warning") {
+      bg = "warning-bg";
+      btn = "warning-btn";
     }
 
-    body.innerHTML += `
+    const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
         <div class="alert-header ${bg}">
@@ -32,6 +35,8 @@ function cuteAlert({ type, title, message, buttonText }) {
       </div>
     </div>
     `;
+
+    body.insertAdjacentHTML("afterend", template);
 
     const alertWrapper = document.querySelector(".alert-wrapper");
 

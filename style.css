@@ -18,7 +18,7 @@
 
 .alert-frame {
   background: #fff;
-  height: 425px;
+  min-height: 400px;
   width: 300px;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -29,7 +29,6 @@
   flex-direction: column;
   height: 175px;
   align-items: flex-end;
-  justify-content: flex-star;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -89,6 +88,7 @@
   font-size: 15px;
   text-align: center;
   margin-bottom: 35px;
+  line-height: 1.6;
 }
 
 .alert-button {
@@ -119,10 +119,18 @@
   background: #2dd284;
 }
 
+.warning-bg {
+  background: #fada5e;
+}
+
 .error-btn:hover {
   background: #e5a4b4;
 }
 
 .success-btn:hover {
   background: #6edaa4;
+}
+
+.warning-btn:hover {
+  background: #fcecae;
 }
