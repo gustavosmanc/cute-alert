@@ -2,7 +2,7 @@
 
 JS library with the purpose of providing success and error alert box messages for your website.
 
-![img](https://i.imgur.com/9F8vukF.png)
+![img](https://i.imgur.com/cwW0Izs.png)
 
 
 ## Instructions
@@ -28,6 +28,15 @@ cuteAlert({
   message: "You lost the match!",
   buttonText: "OK :-("
 });
+```
+
+```
+cuteAlert({
+    type: "warning",
+    title: "Be careful...",
+    message: "That's dangerous!",
+    buttonText: "OMG!",
+  });
 ```
 
 cuteAlert() returns a Promise, so you can use "then" to execute an action after the modal window is closed:
