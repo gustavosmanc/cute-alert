@@ -13,7 +13,24 @@
   top: 0;
   overflow: hidden;
   position: fixed;
-  background: rgb(0, 0, 0, 0.3);
+}
+
+@keyframes open-frame {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .alert-frame {
@@ -22,6 +39,9 @@
   width: 300px;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
   border-radius: 10px;
+  animation-name: open-frame;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
 }
 
 .alert-header {
