@@ -30,6 +30,15 @@ cuteAlert({
 });
 ```
 
+```
+cuteAlert({
+    type: "warning",
+    title: "Be careful...",
+    message: "That's dangerous!",
+    buttonText: "OMG!",
+  });
+```
+
 cuteAlert() returns a Promise, so you can use "then" to execute an action after the modal window is closed:
 
 ```
@@ -41,15 +50,6 @@ cuteAlert({
 }).then(() => {
   location.reload();
 });
-```
-
-```
-cuteAlert({
-    type: "warning",
-    title: "Be careful...",
-    message: "That's dangerous!",
-    buttonText: "OMG!",
-  });
 ```
 
 
