@@ -4,6 +4,19 @@ function cuteAlert({ type, title, message, buttonText }) {
   return new Promise((resolve) => {
     const body = document.querySelector("body");
 
+    const scripts = document.getElementsByTagName("script");
+    let currScript = "";
+
+    for (let script of scripts) {
+      if (script.src.includes("/cute-alert/app.js")) {
+        currScript = script;
+      }
+    }
+
+    let src = currScript.src;
+
+    src = src.substring(0, src.lastIndexOf("/"));
+
     if (!buttonText) {
       buttonText = "OK";
     }
@@ -23,7 +36,7 @@ function cuteAlert({ type, title, message, buttonText }) {
       <div class="alert-frame">
         <div class="alert-header ${bg}">
           <div class="alert-close">X</div>
-          <img class="alert-img" src="img/${type}.svg" />
+          <img class="alert-img" src="${src}/img/${type}.svg" />
         </div>
         <div class="alert-body">
           <span class="alert-title">${title}</span>
