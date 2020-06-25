@@ -10,9 +10,9 @@ I designed this JS library as an open-source project with the purpose of providi
 - Firstly clone this repo and import both "style.css" and "app.js" into your code.
 - In your JS file, call cuteAlert() passing the following arguments: type, title, message and buttonText in object notation. (the last one is optional)
 
-Examples:
+- Examples:
 
-```
+```sh
 cuteAlert({
   type: "success",
   title: "Congratulations!",
@@ -21,7 +21,7 @@ cuteAlert({
 });
 ```
 
-```
+```sh
 cuteAlert({
   type: "error",
   title: "Sorry...",
@@ -30,7 +30,7 @@ cuteAlert({
 });
 ```
 
-```
+```sh
 cuteAlert({
     type: "warning",
     title: "Be careful...",
@@ -39,7 +39,7 @@ cuteAlert({
   });
 ```
 
-```
+```sh
 cuteAlert({
     type: "info",
     title: "Quick tip!",
@@ -48,9 +48,9 @@ cuteAlert({
   });
 ```
 
-cuteAlert() returns a Promise, so you can use "then" to execute an action after the modal window is closed:
+- cuteAlert() returns a Promise, so you can use "then" to execute an action after the modal window is closed:
 
-```
+```sh
 cuteAlert({
   type: "error",
   title: "Sorry...",
