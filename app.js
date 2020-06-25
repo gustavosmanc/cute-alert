@@ -29,6 +29,9 @@ function cuteAlert({ type, title, message, buttonText }) {
     } else if (type === "warning") {
       bg = "warning-bg";
       btn = "warning-btn";
+    } else if (type === "info") {
+      bg = "info-bg";
+      btn = "info-btn";
     }
 
     const template = `

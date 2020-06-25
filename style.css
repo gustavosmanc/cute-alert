@@ -95,7 +95,7 @@
 .alert-button {
   width: 140px;
   margin-bottom: -2px !important;
-  height: 35px;
+  min-height: 35px;
   border-radius: 20px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
@@ -104,8 +104,10 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  line-height: 35px;
+  line-height: 1.6;
   transition: background 0.5s;
+  padding: 5px 15px;
+  word-wrap: break-word;
 }
 
 .alert-button:focus {
@@ -124,6 +126,10 @@
   background: #fada5e;
 }
 
+.info-bg {
+  background: #88cef7;
+}
+
 .error-btn:hover {
   background: #e5a4b4;
 }
@@ -134,4 +140,8 @@
 
 .warning-btn:hover {
   background: #fcecae;
+}
+
+.info-btn:hover {
+  background: #c3e6fb;
 }
