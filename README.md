@@ -2,7 +2,7 @@
 
 JS library with the purpose of providing success and error alert box messages for your website.
 
-![img](https://i.imgur.com/V0zAJwu.png)
+![img](https://i.imgur.com/16FXjDo.png)
 
 
 ## Instructions
@@ -36,6 +36,15 @@ cuteAlert({
     title: "Be careful...",
     message: "That's dangerous!",
     buttonText: "OMG!",
+  });
+```
+
+```
+cuteAlert({
+    type: "info",
+    title: "Quick tip!",
+    message: "Avoid this path...",
+    buttonText: "OK!",
   });
 ```
 
