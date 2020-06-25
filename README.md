@@ -7,7 +7,7 @@ JS library with the purpose of providing success and error alert box messages fo
 
 ## Instructions
 
-- Firstly clone this repo and import both "style.css" and "app.js" into your code. (JS file must be at the end of body tag)
+- Firstly clone this repo and import both "style.css" and "app.js" into your code.
 - In your JS file, call cuteAlert() passing the following arguments: type, title, message and buttonText in object notation. (the last one is optional)
 
 Examples:
