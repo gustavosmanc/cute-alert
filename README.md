@@ -1,8 +1,8 @@
 # Cute Alert
 
-I designed this JS library as an open-source project with the purpose of providing beautiful alert box messages for your website. Feel free to contribute with a pull request or suggestions.
-
 ![img](https://i.imgur.com/6if6OwD.png)
+
+I designed this JS library as an open-source project with the purpose of providing beautiful alert box messages for your website. Feel free to contribute with a pull request or suggestions.
 
 
 ## Instructions
