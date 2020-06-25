@@ -7,7 +7,7 @@ I designed this JS library as an open-source project with the purpose of providi
 
 ## Instructions
 
-- Firstly clone this repo and import both "style.css" and "app.js" into your code.
+- Firstly clone this repo and import both "style.css" and "cute-alert.js" into your code.
 - In your JS file, call cuteAlert() passing the following arguments: type, title, message and buttonText in object notation. (the last one is optional)
 
 Examples:
