@@ -64,25 +64,24 @@
 .alert-close {
   width: 30px;
   height: 30px;
-  background: #e4eae7;
-  color: #222;
+  color: rgb(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 17.5px;
-  margin-top: -15px;
-  margin-right: -15px;
   font-family: "Dosis", sans-serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 16px;
   cursor: pointer;
   line-height: 30px;
-  transition: background 0.5s;
+  transition: color 0.5s;
   margin-left: auto;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 .alert-close:hover {
-  background: #fff;
+  color: rgb(0, 0, 0, 0.5);
 }
 
 .alert-body {
