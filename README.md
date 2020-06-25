@@ -2,7 +2,7 @@
 
 JS library with the purpose of providing success and error alert box messages for your website.
 
-![img](https://imgur.com/V0zAJwu)
+![img](https://i.imgur.com/V0zAJwu.png)
 
 
 ## Instructions
