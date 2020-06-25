@@ -13,6 +13,7 @@
   top: 0;
   overflow: hidden;
   position: fixed;
+  background: rgb(0, 0, 0, 0.3);
 }
 
 .alert-frame {
@@ -25,18 +26,18 @@
 
 .alert-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 175px;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 .alert-img {
   height: 80px;
-  align-self: center;
   position: absolute;
-  margin-top: 45;
+  align-self: center;
 }
 
 .alert-close {
@@ -56,6 +57,7 @@
   cursor: pointer;
   line-height: 30px;
   transition: background 0.5s;
+  margin-left: auto;
 }
 
 .alert-close:hover {
