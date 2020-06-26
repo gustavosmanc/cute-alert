@@ -1,66 +1,45 @@
 # Cute Alert
 
-![img](https://i.imgur.com/6if6OwD.png)
+![img](https://i.imgur.com/fuKb4lG.png)
 
 I designed this JS library as an open-source project with the purpose of providing beautiful alert box messages for your website. Feel free to contribute with a pull request or suggestions.
 
 
-## Instructions
+## Installation Instructions
 
-- Firstly clone this repo and import both "style.css" and "cute-alert.js" into your code.
-- In your JS file, call cuteAlert() passing the following arguments: type, title, message and buttonText in object notation. (the last one is optional)
+- Clone this repository into your project libs folder.
+- Import both "style.css" and "cute-alert.js" into your code just like the image below:
 
-Examples:
+![img](https://i.imgur.com/GuK5Uov.png)
 
-```sh
-cuteAlert({
-  type: "success",
-  title: "Congratulations!",
-  message: "You won the match!",
-  buttonText: "Yaay!!!"
-});
+## Docs
+
+- It's way too simple for you to use this library into your code, all you have to do is call cuteAlert() and pass it's arguments in object notation.
+
+```
+buttonText is an optional parameter, by default it's set as "OK".
 ```
 
-```sh
-cuteAlert({
-  type: "error",
-  title: "Sorry...",
-  message: "You lost the match!",
-  buttonText: "OK :-("
-});
+```
+"type" will define what kind of alert box will be shown.
 ```
 
-```sh
-cuteAlert({
-    type: "warning",
-    title: "Be careful...",
-    message: "That's dangerous!",
-    buttonText: "OMG!",
-  });
+![img](https://i.imgur.com/BHqM7Mm.png)
+![img](https://i.imgur.com/mLAfKh7.png)
+![img](https://i.imgur.com/6012avM.png)
+![img](https://i.imgur.com/E9BUQeV.png)
+
+```
+cuteAlert() returns a Promise, so you can use "then" to execute an action after the modal window is closed
 ```
 
-```sh
-cuteAlert({
-    type: "info",
-    title: "Quick tip!",
-    message: "Avoid this path...",
-    buttonText: "OK!",
-  });
+![img](https://i.imgur.com/i4OZ7NV.png)
+
+```
+As for the question alert box, you can choose what you want to do after any of the buttons is pressed with "then" aswell.
 ```
 
-cuteAlert() returns a Promise, so you can use "then" to execute an action after the modal window is closed:
-
-```sh
-cuteAlert({
-  type: "error",
-  title: "Sorry...",
-  message: "You lost the match!",
-  buttonText: "OK :-("
-}).then(() => {
-  location.reload();
-});
-```
-
+![img](https://i.imgur.com/VFoRvKR.png)
 
 ## Design
 
