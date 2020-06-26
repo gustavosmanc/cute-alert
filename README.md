@@ -14,34 +14,24 @@ I designed this JS library as an open-source project with the purpose of providi
 
 ## Docs
 
-- It's way too simple for you to use this library into your code, all you have to do is call cuteAlert() and pass it's arguments in object notation.
+- It's way too simple for you to import this lib into your code, all you have to do is call ```cuteAlert()``` and pass it's arguments in object notation.
 
-```
-buttonText is an optional parameter, by default it's set as "OK".
-```
+```buttonText``` is an optional parameter, by default it's set as "OK".
 
-```
-"type" will define what kind of alert box will be shown.
-```
+```type``` will define what kind of alert box will be shown.
 
 ![img](https://i.imgur.com/BHqM7Mm.png)
 ![img](https://i.imgur.com/mLAfKh7.png)
 ![img](https://i.imgur.com/6012avM.png)
 ![img](https://i.imgur.com/E9BUQeV.png)
 
-```
-cuteAlert() returns a Promise, so you can use "then" to execute an action after the alert box frame is closed.
-```
+```cuteAlert()```returns a Promise, so you can use ```then``` to execute an action after the alert box frame is closed.
 
 ![img](https://i.imgur.com/i4OZ7NV.png)
 
-```
 As for the question alert box, you can choose what you want to do after any of the buttons is pressed with "then" aswell.
-```
 
-```
 "confirmText" and "cancelText" are both optional, by the default they are set as "Confirm" and "Cancel" respectively.
-```
 
 ![img](https://i.imgur.com/VFoRvKR.png)
 
