@@ -80,14 +80,37 @@
   margin-top: 5px;
 }
 
+.alert-close-circle {
+  width: 30px;
+  height: 30px;
+  background: #e4eae7;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 17.5px;
+  margin-top: -15px;
+  margin-right: -15px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: 30px;
+  transition: background 0.5s;
+  margin-left: auto;
+}
+
+.alert-close-circle:hover {
+  background: #fff;
+}
+
 .alert-close:hover {
   color: rgb(0, 0, 0, 0.5);
 }
 
 .alert-body {
-  padding: 30px 60px;
+  padding: 30px 30px;
   display: flex;
-  align-items: center;
   flex-direction: column;
   text-align: center;
 }
@@ -99,6 +122,7 @@
   font-size: 15px;
   margin-bottom: 35px;
   color: #222;
+  align-self: center;
 }
 
 .alert-message {
@@ -110,12 +134,56 @@
   text-align: center;
   margin-bottom: 35px;
   line-height: 1.6;
+  align-self: center;
 }
 
 .alert-button {
-  width: 140px;
-  margin-bottom: -2px !important;
-  min-height: 35px;
+  min-width: 140px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.5s;
+  padding: 0 15px;
+  align-self: center;
+}
+
+.alert-button:focus {
+  outline: 0;
+}
+
+.question-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.confirm-button {
+  min-width: 100px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.5s;
+  padding: 0 15px;
+  margin-right: 10px;
+}
+
+.confirm-button:focus {
+  outline: 0;
+}
+
+.cancel-button {
+  min-width: 100px;
+  height: 35px;
   border-radius: 20px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
@@ -127,10 +195,9 @@
   line-height: 1.6;
   transition: background 0.5s;
   padding: 5px 15px;
-  word-wrap: break-word;
 }
 
-.alert-button:focus {
+.cancel-button:focus {
   outline: 0;
 }
 
@@ -144,6 +211,10 @@
 
 .warning-bg {
   background: #fada5e;
+}
+
+.question-bg {
+  background: #779ecb;
 }
 
 .info-bg {
@@ -164,4 +235,8 @@
 
 .info-btn:hover {
   background: #c3e6fb;
+}
+
+.question-btn:hover {
+  background: #bacee4;
 }

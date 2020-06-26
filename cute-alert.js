@@ -1,6 +1,14 @@
 // Design by Igor Ferrão de Souza: https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/
 
-function cuteAlert({ type, title, message, buttonText }) {
+function cuteAlert({
+  type,
+  title,
+  message,
+  buttonText = "OK",
+  confirmText = "OK",
+  cancelText = "Cancel",
+  closeStyle,
+}) {
   return new Promise((resolve) => {
     const body = document.querySelector("body");
 
@@ -17,7 +25,12 @@ function cuteAlert({ type, title, message, buttonText }) {
 
     src = src.substring(0, src.lastIndexOf("/"));
 
-    if (!buttonText) {
+    let closeStyleTemplate = "alert-close";
+    if (closeStyle === "circle") {
+      closeStyleTemplate = "alert-close-circle";
+    }
+
+    if (!buttonText || buttonText.trim() === "") {
       buttonText = "OK";
     }
     let bg = "success-bg";
@@ -34,19 +47,31 @@ function cuteAlert({ type, title, message, buttonText }) {
       btn = "info-btn";
     }
 
+    let btnTemplate = `
+    <button class="alert-button ${bg} ${btn}">${buttonText}</button>
+    `;
+    if (type === "question") {
+      bg = "question-bg";
+      btn = "question-btn";
+      btnTemplate = `
+      <div class="question-buttons">
+        <button class="confirm-button ${bg} ${btn}">${confirmText}</button>
+        <button class="cancel-button error-bg error-btn">${cancelText}</button>
+      </div>
+      `;
+    }
+
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
         <div class="alert-header ${bg}">
-          <span class="alert-close">X</span>
+          <span class="${closeStyleTemplate}">X</span>
           <img class="alert-img" src="${src}/img/${type}.svg" />
         </div>
         <div class="alert-body">
           <span class="alert-title">${title}</span>
-          <span class="alert-message"
-            >${message}</span
-          >
-          <button class="alert-button ${bg} ${btn}">${buttonText}</button>
+          <span class="alert-message">${message}</span>
+          ${btnTemplate}
         </div>
       </div>
     </div>
@@ -55,18 +80,32 @@ function cuteAlert({ type, title, message, buttonText }) {
     body.insertAdjacentHTML("afterend", template);
 
     const alertWrapper = document.querySelector(".alert-wrapper");
-
     const alertFrame = document.querySelector(".alert-frame");
+    const alertClose = document.querySelector(`.${closeStyleTemplate}`);
 
-    const alertClose = document.querySelector(".alert-close");
-    const alertButton = document.querySelector(".alert-button");
+    if (type === "question") {
+      const confirmButton = document.querySelector(".confirm-button");
+      const cancelButton = document.querySelector(".cancel-button");
+
+      confirmButton.addEventListener("click", () => {
+        alertWrapper.remove();
+        resolve("confirm");
+      });
+
+      cancelButton.addEventListener("click", () => {
+        alertWrapper.remove();
+        resolve();
+      });
+    } else {
+      const alertButton = document.querySelector(".alert-button");
+
+      alertButton.addEventListener("click", () => {
+        alertWrapper.remove();
+        resolve();
+      });
+    }
 
     alertClose.addEventListener("click", () => {
-      alertWrapper.remove();
-      resolve();
-    });
-
-    alertButton.addEventListener("click", () => {
       alertWrapper.remove();
       resolve();
     });
