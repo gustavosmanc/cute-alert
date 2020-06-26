@@ -39,6 +39,10 @@ cuteAlert() returns a Promise, so you can use "then" to execute an action after 
 As for the question alert box, you can choose what you want to do after any of the buttons is pressed with "then" aswell.
 ```
 
+```
+"confirmText" and "cancelText" are both optional, by the default they are set as "Confirm" and "Cancel" respectively.
+```
+
 ![img](https://i.imgur.com/VFoRvKR.png)
 
 ### Close button as a circle
