@@ -30,7 +30,7 @@ buttonText is an optional parameter, by default it's set as "OK".
 ![img](https://i.imgur.com/E9BUQeV.png)
 
 ```
-cuteAlert() returns a Promise, so you can use "then" to execute an action after the modal window is closed
+cuteAlert() returns a Promise, so you can use "then" to execute an action after the alert box frame is closed.
 ```
 
 ![img](https://i.imgur.com/i4OZ7NV.png)
