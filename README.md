@@ -49,7 +49,9 @@ As for the question alert box, you can choose what you want to do after any of t
 
 - If you wish to have the close button styled as a circle, you need to pass ```closeStyle: "circle``` in your cuteAlert() arguments.
 
-![img](https://i.imgur.com/Ak2JidL.png)
+<p align="center">
+  <img src="https://i.imgur.com/Ak2JidL.png" />
+</p>
 ![img](https://i.imgur.com/QPYnAyg.png)
 
 ## Design
