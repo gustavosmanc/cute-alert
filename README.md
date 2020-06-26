@@ -31,7 +31,7 @@ I designed this JS library as an open-source project with the purpose of providi
 
 As for the question alert box, you can choose what you want to do after any of the buttons is pressed with "then" aswell.
 
-"confirmText" and "cancelText" are both optional, by the default they are set as "Confirm" and "Cancel" respectively.
+```confirmText``` and ```cancelText``` are both optional, by the default they are set as "Confirm" and "Cancel" respectively.
 
 ![img](https://i.imgur.com/VFoRvKR.png)
 
