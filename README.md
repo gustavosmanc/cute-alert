@@ -14,7 +14,7 @@ I designed this JS library as an open-source project with the purpose of providi
 
 ## Docs
 
-- It's way too simple for you to import this lib into your code, all you have to do is call ```cuteAlert()``` and pass it's arguments in object notation.
+It's way too simple for you to import this lib into your code, all you have to do is call ```cuteAlert()``` and pass it's arguments in object notation.
 
 ```buttonText``` is an optional parameter, by default it's set as "OK".
 
