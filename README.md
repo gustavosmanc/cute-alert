@@ -7,7 +7,7 @@ I designed this JS library as an open-source project with the purpose of providi
 
 ## Installation Instructions
 
-- Clone this repository into your project libs folder.
+- Clone this repository into your project's lib folder.
 - Import both "style.css" and "cute-alert.js" into your code just like the image below:
 
 ![img](https://i.imgur.com/GuK5Uov.png)
