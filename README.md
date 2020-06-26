@@ -41,6 +41,13 @@ As for the question alert box, you can choose what you want to do after any of t
 
 ![img](https://i.imgur.com/VFoRvKR.png)
 
+### Close button as a circle
+
+- If you wish to have the close button styled as a circle, you need to pass ```closeStyle: "circle``` in your cuteAlert() arguments.
+
+![img](https://i.imgur.com/Ak2JidL.png)
+![img](https://i.imgur.com/QPYnAyg.png)
+
 ## Design
 
 - **Igor Ferrão de Souza** https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/
