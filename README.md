@@ -52,6 +52,7 @@ As for the question alert box, you can choose what you want to do after any of t
 <p align="center">
   <img src="https://i.imgur.com/Ak2JidL.png" />
 </p>
+
 ![img](https://i.imgur.com/QPYnAyg.png)
 
 ## Design
