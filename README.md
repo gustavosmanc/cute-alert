@@ -37,7 +37,7 @@ As for the question alert box, you can choose what you want to do after any of t
 
 ### Close button as a circle
 
-- If you wish to have the close button styled as a circle, you need to pass ```closeStyle: "circle``` in your cuteAlert() arguments.
+- If you wish to have the close button styled as a circle, you need to pass ```closeStyle: "circle``` as an argument in ```cuteAlert()```.
 
 <p align="center">
   <img src="https://i.imgur.com/Ak2JidL.png" />
