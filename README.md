@@ -29,7 +29,7 @@ It's way too simple for you to import this lib into your code, all you have to d
 
 ![img](https://i.imgur.com/i4OZ7NV.png)
 
-As for the question alert box, you can choose what you want to do after any of the buttons is pressed with "then" aswell.
+As for the question alert box, you can choose what you want to do after any of the buttons is pressed with ```then``` aswell.
 
 ```confirmText``` and ```cancelText``` are both optional, by the default they are set as "Confirm" and "Cancel" respectively.
 
