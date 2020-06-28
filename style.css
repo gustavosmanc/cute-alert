@@ -150,6 +150,9 @@
   transition: background 0.5s;
   padding: 0 15px;
   align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .alert-button:focus {
@@ -175,6 +178,9 @@
   transition: background 0.5s;
   padding: 0 15px;
   margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .confirm-button:focus {
@@ -194,7 +200,10 @@
   padding: 0;
   line-height: 1.6;
   transition: background 0.5s;
-  padding: 5px 15px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cancel-button:focus {
