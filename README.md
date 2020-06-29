@@ -17,7 +17,7 @@ I designed this JS library as an open-source project with the purpose of providi
 
 ## Docs
 
-It's way too simple for you to import this lib into your code, all you have to do is call ```cuteAlert()``` and pass it's arguments in object notation.
+It's way too simple for you to import this lib into your code, all you have to do is call ```cuteAlert()``` and pass its arguments in object notation.
 
 ```buttonText``` is an optional parameter, by default it's set as "OK".
 
@@ -47,6 +47,21 @@ If you wish to have the close button styled as a circle, you need to pass ```clo
 </p>
 
 ![img](https://i.imgur.com/QPYnAyg.png)
+
+### Toasts (NEW FEATURE!!!)
+
+<p align="center">
+  <img src="https://media.giphy.com/media/fwnMNrkWLs1TrxK6ab/giphy.gif" />
+</p>
+
+It's even easier to use toasts, all you have to do is call ```cuteToast()``` and pass ```type```, ```message``` and ```timer```(in miliseconds) as its arguments.
+
+![img](https://i.imgur.com/IDUChOO.png)
+![img](https://i.imgur.com/HlaJCxL.png)
+![img](https://i.imgur.com/hpGOQmh.png)
+![img](https://i.imgur.com/LXBz631.png)
+
+It also returns a Promise, so you can use ```then``` to execute an action after the toast is closed.
 
 ## Design
 
