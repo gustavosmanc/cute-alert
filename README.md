@@ -11,7 +11,9 @@ I designed this JS library as an open-source project with the purpose of providi
 - Import both "style.css" and "cute-alert.js" into your code just like the image below:
 
 ![img](https://i.imgur.com/GuK5Uov.png)
-<iframe src="https://giphy.com/embed/fwnMNrkWLs1TrxK6ab" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fwnMNrkWLs1TrxK6ab">via GIPHY</a></p>
+<p align="center">
+  <img src="https://giphy.com/embed/fwnMNrkWLs1TrxK6ab" />
+</p>
 
 ## Docs
 
