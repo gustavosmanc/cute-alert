@@ -10,6 +10,7 @@ function cuteAlert({
   closeStyle,
 }) {
   return new Promise((resolve) => {
+    setInterval(() => {}, 5000);
     const body = document.querySelector("body");
 
     const scripts = document.getElementsByTagName("script");
@@ -30,32 +31,13 @@ function cuteAlert({
       closeStyleTemplate = "alert-close-circle";
     }
 
-    if (!buttonText || buttonText.trim() === "") {
-      buttonText = "OK";
-    }
-    let bg = "success-bg";
-    let btn = "success-btn";
-
-    if (type === "error") {
-      bg = "error-bg";
-      btn = "error-btn";
-    } else if (type === "warning") {
-      bg = "warning-bg";
-      btn = "warning-btn";
-    } else if (type === "info") {
-      bg = "info-bg";
-      btn = "info-btn";
-    }
-
     let btnTemplate = `
-    <button class="alert-button ${bg} ${btn}">${buttonText}</button>
+    <button class="alert-button ${type}-bg ${type}-btn">${buttonText}</button>
     `;
     if (type === "question") {
-      bg = "question-bg";
-      btn = "question-btn";
       btnTemplate = `
       <div class="question-buttons">
-        <button class="confirm-button ${bg} ${btn}">${confirmText}</button>
+        <button class="confirm-button ${type}-bg ${type}-btn">${confirmText}</button>
         <button class="cancel-button error-bg error-btn">${cancelText}</button>
       </div>
       `;
@@ -64,7 +46,7 @@ function cuteAlert({
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
-        <div class="alert-header ${bg}">
+        <div class="alert-header ${type}-bg">
           <span class="${closeStyleTemplate}">X</span>
           <img class="alert-img" src="${src}/img/${type}.svg" />
         </div>
@@ -117,6 +99,56 @@ function cuteAlert({
 
     alertFrame.addEventListener("click", (e) => {
       e.stopPropagation();
+    });
+  });
+}
+
+function cuteToast({ type, message, timer = 5000 }) {
+  return new Promise((resolve) => {
+    if (document.querySelector(".toast-container")) {
+      document.querySelector(".toast-container").remove();
+    }
+    const body = document.querySelector("body");
+
+    const scripts = document.getElementsByTagName("script");
+    let currScript = "";
+
+    for (let script of scripts) {
+      if (script.src.includes("cute-alert.js")) {
+        currScript = script;
+      }
+    }
+
+    let src = currScript.src;
+
+    src = src.substring(0, src.lastIndexOf("/"));
+
+    const template = `
+    <div class="toast-container ${type}-bg">
+      <div>
+        <div class="toast-frame">
+          <img class="toast-img" src="${src}/img/${type}.svg" />
+          <span class="toast-message">${message}</span>
+          <div class="toast-close">X</div>
+        </div>
+        <div class="toast-timer ${type}-timer" style="animation: timer ${timer}ms linear;"/>
+      </div>
+    </div>
+    `;
+
+    body.insertAdjacentHTML("afterend", template);
+
+    const toastContainer = document.querySelector(".toast-container");
+
+    setTimeout(() => {
+      toastContainer.remove();
+    }, timer);
+
+    const toastClose = document.querySelector(".toast-close");
+
+    toastClose.addEventListener("click", () => {
+      toastContainer.remove();
+      resolve();
     });
   });
 }
