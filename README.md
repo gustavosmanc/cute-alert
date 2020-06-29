@@ -1,6 +1,7 @@
 # Cute Alert
 
 ![img](https://i.imgur.com/fuKb4lG.png)
+![img](https://media.giphy.com/media/fwnMNrkWLs1TrxK6ab/giphy.mp4)
 
 I designed this JS library as an open-source project with the purpose of providing beautiful alert box messages for your website. Feel free to contribute with a pull request or suggestions.
 
@@ -11,7 +12,6 @@ I designed this JS library as an open-source project with the purpose of providi
 - Import both "style.css" and "cute-alert.js" into your code just like the image below:
 
 ![img](https://i.imgur.com/GuK5Uov.png)
-![img](https://media.giphy.com/media/fwnMNrkWLs1TrxK6ab/giphy.gif)
 
 ## Docs
 
