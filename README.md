@@ -61,7 +61,7 @@ It's even easier to use toasts, all you have to do is call ```cuteToast()``` and
 ![img](https://i.imgur.com/hpGOQmh.png)
 ![img](https://i.imgur.com/LXBz631.png)
 
-It also returns a Promise, so you can use ```then``` to execute an action after the toast is closed.
+It also returns a Promise, so you can use ```then``` to execute an action after the toast is closed or reaches its end by a timer.
 
 ## Design
 
