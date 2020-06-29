@@ -142,6 +142,7 @@ function cuteToast({ type, message, timer = 5000 }) {
 
     setTimeout(() => {
       toastContainer.remove();
+      resolve();
     }, timer);
 
     const toastClose = document.querySelector(".toast-close");
