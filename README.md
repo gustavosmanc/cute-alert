@@ -1,8 +1,6 @@
 # Cute Alert
 
-<p align="center">
-  <img src="https://media.giphy.com/media/QXP3y7gvmkfZwo6jnc/giphy.gif" />
-</p>
+![img](https://i.imgur.com/fuKb4lG.png)
 <p align="center">
   <img src="https://media.giphy.com/media/fwnMNrkWLs1TrxK6ab/giphy.gif" />
 </p>
