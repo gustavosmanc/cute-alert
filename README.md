@@ -63,7 +63,7 @@ It's even easier to use toasts, all you have to do is call ```cuteToast()``` and
 
 It also returns a Promise, so you can use ```then``` to execute an action after the toast is closed or reaches its end by a timer.
 
-## Design
+## Alert Box Design
 
 - **Igor Ferrão de Souza** https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/
 
