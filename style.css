@@ -41,6 +41,7 @@
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
   border-radius: 10px;
   animation: open-frame 0.3s linear;
+  z-index: 999999;
 }
 
 .alert-header {
@@ -236,6 +237,7 @@
   border-radius: 5px;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
   animation: open-toast 0.3s linear;
+  z-index: 999999;
 }
 
 .toast-frame {
