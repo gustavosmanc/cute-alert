@@ -14,6 +14,7 @@
   overflow: hidden;
   position: fixed;
   background: rgb(0, 0, 0, 0.3);
+  z-index: 999999;
 }
 
 @keyframes open-frame {
@@ -41,7 +42,6 @@
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
   border-radius: 10px;
   animation: open-frame 0.3s linear;
-  z-index: 999999;
 }
 
 .alert-header {
