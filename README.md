@@ -5,7 +5,7 @@
   <img src="https://media.giphy.com/media/fwnMNrkWLs1TrxK6ab/giphy.gif" />
 </p>
 
-I designed this JS library as an open-source project with the purpose of providing beautiful alert box messages for your website. Feel free to contribute with a pull request or suggestions.
+I created this JS library as an open-source project (for studying purposes) to provide beautiful alert box messages made with HTML, CSS and JS only. Feel free to contribute with a pull request or suggestions.
 
 
 ## Installation Instructions
