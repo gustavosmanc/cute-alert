@@ -1,6 +1,6 @@
 // Alert box design by Igor Ferrão de Souza: https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/
 
-function cuteAlert({
+const cuteAlert = ({
   type,
   title,
   message,
@@ -8,7 +8,7 @@ function cuteAlert({
   confirmText = "OK",
   cancelText = "Cancel",
   closeStyle,
-}) {
+}) => {
   return new Promise((resolve) => {
     const existingAlert = document.querySelector(".alert-wrapper");
 
@@ -19,21 +19,13 @@ function cuteAlert({
     const body = document.querySelector("body");
 
     const scripts = document.getElementsByTagName("script");
-    let currScript = "";
+
+    let src = "";
 
     for (let script of scripts) {
       if (script.src.includes("cute-alert.js")) {
-        currScript = script;
+        src = script.src.substring(0, script.src.lastIndexOf("/"));
       }
-    }
-
-    let src = currScript.src;
-
-    src = src.substring(0, src.lastIndexOf("/"));
-
-    let closeStyleTemplate = "alert-close";
-    if (closeStyle === "circle") {
-      closeStyleTemplate = "alert-close-circle";
     }
 
     let btnTemplate = `
@@ -53,7 +45,7 @@ function cuteAlert({
     <div class="alert-wrapper">
       <div class="alert-frame">
         <div class="alert-header ${type}-bg">
-          <span class="${closeStyleTemplate}">X</span>
+          <span class="alert-close ${closeStyle === "circle" ? "alert-close-circle" : "alert-close-default"}">X</span>
           <img class="alert-img" src="${src}/img/${type}.svg" />
         </div>
         <div class="alert-body">
@@ -69,7 +61,7 @@ function cuteAlert({
 
     const alertWrapper = document.querySelector(".alert-wrapper");
     const alertFrame = document.querySelector(".alert-frame");
-    const alertClose = document.querySelector(`.${closeStyleTemplate}`);
+    const alertClose = document.querySelector(".alert-close");
 
     if (type === "question") {
       const confirmButton = document.querySelector(".confirm-button");
@@ -109,7 +101,7 @@ function cuteAlert({
   });
 }
 
-function cuteToast({ type, message, timer = 5000 }) {
+const cuteToast = ({ type, message, timer = 5000 }) => {
   return new Promise((resolve) => {
     const existingToast = document.querySelector(".toast-container");
 
@@ -120,17 +112,14 @@ function cuteToast({ type, message, timer = 5000 }) {
     const body = document.querySelector("body");
 
     const scripts = document.getElementsByTagName("script");
-    let currScript = "";
+
+    let src = "";
 
     for (let script of scripts) {
       if (script.src.includes("cute-alert.js")) {
-        currScript = script;
+        src = script.src.substring(0, script.src.lastIndexOf("/"));
       }
     }
-
-    let src = currScript.src;
-
-    src = src.substring(0, src.lastIndexOf("/"));
 
     const template = `
     <div class="toast-container ${type}-bg">

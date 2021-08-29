@@ -65,15 +65,18 @@
 .alert-close {
   width: 30px;
   height: 30px;
-  color: rgb(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Dosis", sans-serif;
   font-weight: 700;
-  font-size: 16px;
   cursor: pointer;
   line-height: 30px;
+}
+
+.alert-close-default {
+  color: rgb(0, 0, 0, 0.2);
+  font-size: 16px;
   transition: color 0.5s;
   margin-left: auto;
   margin-right: 5px;
@@ -81,21 +84,12 @@
 }
 
 .alert-close-circle {
-  width: 30px;
-  height: 30px;
   background: #e4eae7;
   color: #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 17.5px;
   margin-top: -15px;
   margin-right: -15px;
-  font-family: "Dosis", sans-serif;
-  font-weight: 700;
   font-size: 12px;
-  cursor: pointer;
-  line-height: 30px;
   transition: background 0.5s;
   margin-left: auto;
 }
