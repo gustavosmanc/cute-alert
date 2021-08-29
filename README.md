@@ -48,7 +48,7 @@ If you wish to have the close button styled as a circle, you need to pass ```clo
 
 ![img](https://i.imgur.com/QPYnAyg.png)
 
-### Toasts (NEW FEATURE!!!)
+### Toasts
 
 <p align="center">
   <img src="https://media.giphy.com/media/fwnMNrkWLs1TrxK6ab/giphy.gif" />
