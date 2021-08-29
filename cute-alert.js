@@ -10,7 +10,12 @@ function cuteAlert({
   closeStyle,
 }) {
   return new Promise((resolve) => {
-    setInterval(() => {}, 5000);
+    const existingAlert = document.querySelector(".alert-wrapper");
+
+    if (existingAlert) {
+      existingAlert.remove();
+    }
+
     const body = document.querySelector("body");
 
     const scripts = document.getElementsByTagName("script");
@@ -34,6 +39,7 @@ function cuteAlert({
     let btnTemplate = `
     <button class="alert-button ${type}-bg ${type}-btn">${buttonText}</button>
     `;
+
     if (type === "question") {
       btnTemplate = `
       <div class="question-buttons">
@@ -105,9 +111,12 @@ function cuteAlert({
 
 function cuteToast({ type, message, timer = 5000 }) {
   return new Promise((resolve) => {
-    if (document.querySelector(".toast-container")) {
-      document.querySelector(".toast-container").remove();
+    const existingToast = document.querySelector(".toast-container");
+
+    if (existingToast) {
+      existingToast.remove();
     }
+
     const body = document.querySelector("body");
 
     const scripts = document.getElementsByTagName("script");
