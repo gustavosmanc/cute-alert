@@ -234,6 +234,31 @@
   z-index: 999999;
 }
 
+.toast-container-wrapper {
+  top: 15px;
+  right: 15px;
+  position: fixed;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: -0.75em;
+  margin-bottom: -0.75em;
+}
+
+.toast-container-wrapper > * {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+
+
+.toast-container {
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  position: relative;
+}
+
 .toast-frame {
   padding: 5px 15px;
   display: flex;

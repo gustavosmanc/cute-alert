@@ -103,15 +103,25 @@ const cuteAlert = ({
 
 const cuteToast = ({ type, message, timer = 5000 }) => {
   return new Promise((resolve) => {
-    const existingToast = document.querySelector(".toast-container");
-
-    if (existingToast) {
-      existingToast.remove();
-    }
 
     const body = document.querySelector("body");
 
+    let toastWrapper = document.querySelector(".toast-container-wrapper");
+
+    if(!toastWrapper) {
+      const template = `
+      <div class="toast-container-wrapper">
+      </div>
+      `;
+      body.insertAdjacentHTML("afterend", template);
+      toastWrapper = document.querySelector(".toast-container-wrapper");
+    }
+
+
     const scripts = document.getElementsByTagName("script");
+
+    const this_id = cuteToast.cutemaxid;
+    cuteToast.cutemaxid++;
 
     let src = "";
 
@@ -122,7 +132,7 @@ const cuteToast = ({ type, message, timer = 5000 }) => {
     }
 
     const template = `
-    <div class="toast-container ${type}-bg">
+    <div class="toast-container ${type}-bg" id="cute-${this_id}">
       <div>
         <div class="toast-frame">
           <img class="toast-img" src="${src}/img/${type}.svg" />
@@ -134,9 +144,9 @@ const cuteToast = ({ type, message, timer = 5000 }) => {
     </div>
     `;
 
-    body.insertAdjacentHTML("afterend", template);
+    toastWrapper.insertAdjacentHTML("beforeend", template);
 
-    const toastContainer = document.querySelector(".toast-container");
+    const toastContainer = document.querySelector(`.toast-container#cute-${this_id}`);
 
     setTimeout(() => {
       toastContainer.remove();
@@ -149,5 +159,9 @@ const cuteToast = ({ type, message, timer = 5000 }) => {
       toastContainer.remove();
       resolve();
     });
+
+    return this_id;
   });
 }
+
+cuteToast.cutemaxid = 0;
