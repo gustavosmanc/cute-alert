@@ -135,9 +135,13 @@ const cuteToast = ({ type, message, timer = 5000 }) => {
     <div class="toast-content ${type}-bg" id="${toastId}-toast-content">
       <div>
         <div class="toast-frame">
-          <img class="toast-img" src="${src}/img/${type}.svg" />
-          <span class="toast-message">${message}</span>
-          <div class="toast-close" id="${toastId}-toast-close">X</div>
+          <div class="toast-body">
+            <img class="toast-body-img" src="${src}/img/${type}.svg" />
+            <div class="toast-body-content">
+              <span class="toast-message">${message}</span>
+              <div class="toast-close" id="${toastId}-toast-close">X</div>
+            </div>
+          </div>
         </div>
         <div class="toast-timer ${type}-timer" style="animation: timer ${timer}ms linear;"/>
       </div>

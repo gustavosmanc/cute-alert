@@ -254,8 +254,20 @@
   flex-wrap: wrap;
 }
 
-.toast-img {
+.toast-body-img {
   height: 40px;
+}
+
+.toast-body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.toast-body-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .toast-message {
