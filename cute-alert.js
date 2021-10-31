@@ -147,7 +147,7 @@ const cuteToast = ({ type, message, timer = 5000 }) => {
     const toasts = document.querySelectorAll('.toast-content');
 
     if (toasts.length) {
-      toasts[toasts.length - 1].insertAdjacentHTML('afterend', templateContent);
+      toasts[0].insertAdjacentHTML('beforebegin', templateContent);
     } else {
       templateContainer.innerHTML = templateContent;
     }
