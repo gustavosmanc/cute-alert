@@ -4,27 +4,27 @@ const cuteAlert = ({
   type,
   title,
   message,
-  buttonText = "OK",
-  confirmText = "OK",
-  cancelText = "Cancel",
+  buttonText = 'OK',
+  confirmText = 'OK',
+  cancelText = 'Cancel',
   closeStyle,
 }) => {
-  return new Promise((resolve) => {
-    const existingAlert = document.querySelector(".alert-wrapper");
+  return new Promise(resolve => {
+    const existingAlert = document.querySelector('.alert-wrapper');
 
     if (existingAlert) {
       existingAlert.remove();
     }
 
-    const body = document.querySelector("body");
+    const body = document.querySelector('body');
 
-    const scripts = document.getElementsByTagName("script");
+    const scripts = document.getElementsByTagName('script');
 
-    let src = "";
+    let src = '';
 
     for (let script of scripts) {
-      if (script.src.includes("cute-alert.js")) {
-        src = script.src.substring(0, script.src.lastIndexOf("/"));
+      if (script.src.includes('cute-alert.js')) {
+        src = script.src.substring(0, script.src.lastIndexOf('/'));
       }
     }
 
@@ -32,7 +32,7 @@ const cuteAlert = ({
     <button class="alert-button ${type}-bg ${type}-btn">${buttonText}</button>
     `;
 
-    if (type === "question") {
+    if (type === 'question') {
       btnTemplate = `
       <div class="question-buttons">
         <button class="confirm-button ${type}-bg ${type}-btn">${confirmText}</button>
@@ -45,7 +45,11 @@ const cuteAlert = ({
     <div class="alert-wrapper">
       <div class="alert-frame">
         <div class="alert-header ${type}-bg">
-          <span class="alert-close ${closeStyle === "circle" ? "alert-close-circle" : "alert-close-default"}">X</span>
+          <span class="alert-close ${
+            closeStyle === 'circle'
+              ? 'alert-close-circle'
+              : 'alert-close-default'
+          }">X</span>
           <img class="alert-img" src="${src}/img/${type}.svg" />
         </div>
         <div class="alert-body">
@@ -57,97 +61,113 @@ const cuteAlert = ({
     </div>
     `;
 
-    body.insertAdjacentHTML("afterend", template);
+    body.insertAdjacentHTML('afterend', template);
 
-    const alertWrapper = document.querySelector(".alert-wrapper");
-    const alertFrame = document.querySelector(".alert-frame");
-    const alertClose = document.querySelector(".alert-close");
+    const alertWrapper = document.querySelector('.alert-wrapper');
+    const alertFrame = document.querySelector('.alert-frame');
+    const alertClose = document.querySelector('.alert-close');
 
-    if (type === "question") {
-      const confirmButton = document.querySelector(".confirm-button");
-      const cancelButton = document.querySelector(".cancel-button");
+    if (type === 'question') {
+      const confirmButton = document.querySelector('.confirm-button');
+      const cancelButton = document.querySelector('.cancel-button');
 
-      confirmButton.addEventListener("click", () => {
+      confirmButton.addEventListener('click', () => {
         alertWrapper.remove();
-        resolve("confirm");
+        resolve('confirm');
       });
 
-      cancelButton.addEventListener("click", () => {
+      cancelButton.addEventListener('click', () => {
         alertWrapper.remove();
         resolve();
       });
     } else {
-      const alertButton = document.querySelector(".alert-button");
+      const alertButton = document.querySelector('.alert-button');
 
-      alertButton.addEventListener("click", () => {
+      alertButton.addEventListener('click', () => {
         alertWrapper.remove();
         resolve();
       });
     }
 
-    alertClose.addEventListener("click", () => {
+    alertClose.addEventListener('click', () => {
       alertWrapper.remove();
       resolve();
     });
 
-    alertWrapper.addEventListener("click", () => {
+    alertWrapper.addEventListener('click', () => {
       alertWrapper.remove();
       resolve();
     });
 
-    alertFrame.addEventListener("click", (e) => {
+    alertFrame.addEventListener('click', e => {
       e.stopPropagation();
     });
   });
-}
+};
 
 const cuteToast = ({ type, message, timer = 5000 }) => {
-  return new Promise((resolve) => {
-    const existingToast = document.querySelector(".toast-container");
+  return new Promise(resolve => {
+    const body = document.querySelector('body');
 
-    if (existingToast) {
-      existingToast.remove();
-    }
+    const scripts = document.getElementsByTagName('script');
 
-    const body = document.querySelector("body");
-
-    const scripts = document.getElementsByTagName("script");
-
-    let src = "";
+    let src = '';
 
     for (let script of scripts) {
-      if (script.src.includes("cute-alert.js")) {
-        src = script.src.substring(0, script.src.lastIndexOf("/"));
+      if (script.src.includes('cute-alert.js')) {
+        src = script.src.substring(0, script.src.lastIndexOf('/'));
       }
     }
 
-    const template = `
-    <div class="toast-container ${type}-bg">
+    let templateContainer = document.querySelector('.toast-container');
+
+    if (!templateContainer) {
+      body.insertAdjacentHTML(
+        'afterend',
+        '<div class="toast-container"></div>',
+      );
+      templateContainer = document.querySelector('.toast-container');
+    }
+
+    const toastId = id();
+
+    const templateContent = `
+    <div class="toast-content ${type}-bg" id="${toastId}-toast-content">
       <div>
         <div class="toast-frame">
           <img class="toast-img" src="${src}/img/${type}.svg" />
           <span class="toast-message">${message}</span>
-          <div class="toast-close">X</div>
+          <div class="toast-close" id="${toastId}-toast-close">X</div>
         </div>
         <div class="toast-timer ${type}-timer" style="animation: timer ${timer}ms linear;"/>
       </div>
     </div>
     `;
 
-    body.insertAdjacentHTML("afterend", template);
+    const toasts = document.querySelectorAll('.toast-content');
 
-    const toastContainer = document.querySelector(".toast-container");
+    if (toasts.length) {
+      toasts[toasts.length - 1].insertAdjacentHTML('afterend', templateContent);
+    } else {
+      templateContainer.innerHTML = templateContent;
+    }
+
+    const toastContent = document.getElementById(`${toastId}-toast-content`);
 
     setTimeout(() => {
-      toastContainer.remove();
+      toastContent.remove();
       resolve();
     }, timer);
 
-    const toastClose = document.querySelector(".toast-close");
+    const toastClose = document.getElementById(`${toastId}-toast-close`);
 
-    toastClose.addEventListener("click", () => {
-      toastContainer.remove();
+    toastClose.addEventListener('click', () => {
+      toastContent.remove();
       resolve();
     });
   });
-}
+};
+
+const id = () => {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};

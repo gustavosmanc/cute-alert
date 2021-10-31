@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
 
 .alert-wrapper {
   display: flex;
@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Dosis", sans-serif;
+  font-family: 'Dosis', sans-serif;
   font-weight: 700;
   cursor: pointer;
   line-height: 30px;
@@ -111,7 +111,7 @@
 
 .alert-title {
   font-size: 18px !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 15px;
   margin-bottom: 35px;
@@ -122,7 +122,7 @@
 .alert-message {
   font-size: 15px !important;
   color: #666;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 15px;
   text-align: center;
@@ -135,7 +135,7 @@
   min-width: 140px;
   height: 35px;
   border-radius: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: white;
@@ -163,7 +163,7 @@
   min-width: 100px;
   height: 35px;
   border-radius: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: white;
@@ -185,7 +185,7 @@
   min-width: 100px;
   height: 35px;
   border-radius: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: white;
@@ -224,14 +224,23 @@
 }
 
 .toast-container {
+  display: flex;
+  flex-direction: column;
   top: 15px;
   right: 15px;
-  overflow: hidden;
   position: fixed;
+  z-index: 999999;
+}
+
+.toast-content {
+  overflow: hidden;
   border-radius: 5px;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
   animation: open-toast 0.3s linear;
-  z-index: 999999;
+}
+
+.toast-content + .toast-content {
+  margin-top: 10px;
 }
 
 .toast-frame {
@@ -251,7 +260,7 @@
 
 .toast-message {
   font-size: 14px !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: #fff;
@@ -260,7 +269,7 @@
 
 .toast-close {
   color: rgb(0, 0, 0, 0.2);
-  font-family: "Dosis", sans-serif;
+  font-family: 'Dosis', sans-serif;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
