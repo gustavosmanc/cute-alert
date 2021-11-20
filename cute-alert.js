@@ -6,6 +6,8 @@ const cuteAlert = ({
   message,
   buttonText = 'OK',
   confirmText = 'OK',
+  vibrate = [],
+  playSound = null,
   cancelText = 'Cancel',
   closeStyle,
 }) => {
@@ -39,6 +41,15 @@ const cuteAlert = ({
         <button class="cancel-button error-bg error-btn">${cancelText}</button>
       </div>
       `;
+    }
+
+    if (vibrate.length > 0) {
+      navigator.vibrate(vibrate);
+    }
+
+    if (playSound !== null) {
+      let sound = new Audio(playSound);
+      sound.play();
     }
 
     const template = `
@@ -105,7 +116,7 @@ const cuteAlert = ({
   });
 };
 
-const cuteToast = ({ type, message, timer = 5000 }) => {
+const cuteToast = ({ type, message, timer = 5000,  vibrate = [], playSound = null }) => {
   return new Promise(resolve => {
     const body = document.querySelector('body');
 
@@ -157,6 +168,15 @@ const cuteToast = ({ type, message, timer = 5000 }) => {
     }
 
     const toastContent = document.getElementById(`${toastId}-toast-content`);
+
+    if (vibrate.length > 0) {
+      navigator.vibrate(vibrate);
+    }
+
+    if (playSound !== null) {
+      let sound = new Audio(playSound);
+      sound.play();
+    }
 
     setTimeout(() => {
       toastContent.remove();
