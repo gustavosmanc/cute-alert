@@ -4,6 +4,7 @@ const cuteAlert = ({
   type,
   title,
   message,
+  img,
   buttonText = 'OK',
   confirmText = 'OK',
   cancelText = 'Cancel',
@@ -44,13 +45,13 @@ const cuteAlert = ({
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
-        <div class="alert-header ${type}-bg">
+        ${img !== '' ? '<div class="alert-header ' + type + '-bg">' : '<div>'}
           <span class="alert-close ${
             closeStyle === 'circle'
               ? 'alert-close-circle'
               : 'alert-close-default'
           }">X</span>
-          <img class="alert-img" src="${src}/img/${type}.svg" />
+          ${img !== '' ? '<img class="alert-img" src="' + src + '/' + img + '" />' : ''}
         </div>
         <div class="alert-body">
           <span class="alert-title">${title}</span>
@@ -85,19 +86,19 @@ const cuteAlert = ({
 
       alertButton.addEventListener('click', () => {
         alertWrapper.remove();
-        resolve();
+        resolve('ok');
       });
     }
 
     alertClose.addEventListener('click', () => {
       alertWrapper.remove();
-      resolve();
+      resolve('close');
     });
 
-    alertWrapper.addEventListener('click', () => {
+/*     alertWrapper.addEventListener('click', () => {
       alertWrapper.remove();
       resolve();
-    });
+    }); */
 
     alertFrame.addEventListener('click', e => {
       e.stopPropagation();
@@ -105,7 +106,7 @@ const cuteAlert = ({
   });
 };
 
-const cuteToast = ({ type, message, timer = 5000 }) => {
+const cuteToast = ({ type, title, message, img, timer = 5000 }) => {
   return new Promise(resolve => {
     const body = document.querySelector('body');
 
@@ -136,14 +137,16 @@ const cuteToast = ({ type, message, timer = 5000 }) => {
       <div>
         <div class="toast-frame">
           <div class="toast-body">
-            <img class="toast-body-img" src="${src}/img/${type}.svg" />
+            
+            ${img !== '' ? '<img class="toast-body-img" src="' + src + '/' + img + '" />' : ''}
             <div class="toast-body-content">
+              <span class="toast-title">${title}</span>
               <span class="toast-message">${message}</span>
-              <div class="toast-close" id="${toastId}-toast-close">X</div>
             </div>
+            <div class="toast-close" id="${toastId}-toast-close">X</div>
           </div>
         </div>
-        <div class="toast-timer ${type}-timer" style="animation: timer ${timer}ms linear;"/>
+        ${img !== '' ? '<div class="toast-timer ' + type + '-timer"  style="animation: timer' + timer + 'ms linear;>' : ''}
       </div>
     </div>
     `;
