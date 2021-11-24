@@ -23,10 +23,78 @@ It's way too simple for you to import this lib into your code, all you have to d
 
 ```type``` will define what kind of alert box will be shown.
 
-![img](https://i.imgur.com/BHqM7Mm.png)
-![img](https://i.imgur.com/mLAfKh7.png)
-![img](https://i.imgur.com/6012avM.png)
-![img](https://i.imgur.com/E9BUQeV.png)
+```js
+const btnSuccess = document.querySelector('.show-Success')
+btnSuccess.addEventListener('click', () =>{
+    cuteAlert({
+        type: "success",
+        title: "Success",
+        message: "Success in life!!",
+        img: "src/img/success.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/success.mp3',
+})
+})
+```
+
+```js
+const btnError = document.querySelector('.show-Error')
+btnError.addEventListener('click', () =>{
+    cuteAlert({
+        type: "error",
+        title: "Error",
+        message: "Error in broeser",
+        img: "src/img/error.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/error.mp3',
+})
+})
+```
+
+```js
+const btnInfo = document.querySelector('.show-Info')
+btnInfo.addEventListener('click', () =>{
+    cuteAlert({
+        type: "info",
+        title: "Info",
+        message: "The world die",
+        img: "src/img/info.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/info.mp3',
+        closeStyle: 'circle',
+})
+})
+```
+
+```js
+const btnWarning = document.querySelector('.show-Warning')
+btnWarning.addEventListener('click', () =>{
+    cuteAlert({
+        type: "warning",
+        title: "Warning",
+        message: "Death in minutes...",
+        img: "src/img/warning.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/warning.mp3',
+})
+})
+
+```
+
+```js
+const btnQuestion = document.querySelector('.show-Question')
+btnQuestion.addEventListener('click', () =>{
+    cuteAlert({
+        type: "question",
+        title: "Contributors",
+        message: "hello do you want to give the repository a star?",
+        img: "src/img/question.svg",
+        confirmText: "Conform",
+        cancelText: 'Cancel',
+        playSound: 'src/sound/Question.mp3',
+})
+})
+```
 
 ```cuteAlert()```returns a Promise, so you can use ```then``` to execute an action after the alert box frame is closed.
 
@@ -76,3 +144,4 @@ It also returns a Promise, so you can use ```then``` to execute an action after 
 ## Contributors
 
 - **Leonardo Bertoncin** - [lbert1](https://github.com/lbert1)
+- **Gabriel Dutra** - [DutraGames](https://github.com/DutraGames)
