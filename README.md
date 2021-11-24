@@ -98,13 +98,46 @@ btnQuestion.addEventListener('click', () =>{
 
 ```cuteAlert()```returns a Promise, so you can use ```then``` to execute an action after the alert box frame is closed.
 
-![img](https://i.imgur.com/i4OZ7NV.png)
+```js
+const btnError = document.querySelector('.show-Error')
+btnError.addEventListener('click', () =>{
+    cuteAlert({
+        type: "error",
+        title: "Error",
+        message: "Error in broeser",
+        img: "src/img/error.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/error.mp3',
+}).then(() =>{
+    location.reload()
+})
+})
+```
 
 As for the question alert box, you can choose what you want to do after any of the buttons is pressed with ```then``` aswell.
 
 ```confirmText``` and ```cancelText``` are both optional, by the default they are set as "Confirm" and "Cancel" respectively.
 
-![img](https://i.imgur.com/VFoRvKR.png)
+```js
+const btnQuestion = document.querySelector('.show-Question')
+btnQuestion.addEventListener('click', () =>{
+    cuteAlert({
+        type: "question",
+        title: "Contributors",
+        message: "hello do you want to give the repository a star?",
+        img: "src/img/question.svg",
+        confirmText: "Conform",
+        cancelText: 'Cancel',
+        playSound: 'src/sound/Question.mp3',
+}).then(e =>{
+    if(e === 'confirm'){
+        alert('Thanks!')
+    }else{
+        alert(':-(')
+    }
+})
+})
+```
 
 ### Close button as a circle
 
@@ -114,7 +147,20 @@ If you wish to have the close button styled as a circle, you need to pass ```clo
   <img src="https://i.imgur.com/Ak2JidL.png" />
 </p>
 
-![img](https://i.imgur.com/QPYnAyg.png)
+```js
+const btnSuccess = document.querySelector('.show-Success')
+btnSuccess.addEventListener('click', () =>{
+    cuteAlert({
+        type: "success",
+        title: "Success",
+        message: "Success in life!!",
+        img: "src/img/success.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/success.mp3',
+        closeStyle: 'circle',
+})
+})
+```
 
 ### Toasts
 
