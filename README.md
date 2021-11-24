@@ -76,3 +76,4 @@ It also returns a Promise, so you can use ```then``` to execute an action after 
 ## Contributors
 
 - **Leonardo Bertoncin** - [lbert1](https://github.com/lbert1)
+- **Gabriel Dutra** - [DutraGames](https://github.com/DutraGames)
