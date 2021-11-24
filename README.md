@@ -170,10 +170,63 @@ btnSuccess.addEventListener('click', () =>{
 
 It's even easier to use toasts, all you have to do is call ```cuteToast()``` and pass ```type```, ```message``` and ```timer```(in miliseconds) as its arguments.
 
-![img](https://i.imgur.com/IDUChOO.png)
-![img](https://i.imgur.com/HlaJCxL.png)
-![img](https://i.imgur.com/hpGOQmh.png)
-![img](https://i.imgur.com/LXBz631.png)
+```js
+const btnToast = document.querySelector('.show-Toast')
+btnToast.addEventListener('click', ()=>{
+    cuteToast({
+        type: 'success',
+        title: 'Toast Success',
+        message: 'Success!! We are on the right way!',
+        img: 'src/img/success.svg',
+        timer: 5000, 
+        playSound: 'src/sound/toast.mp3'
+        })
+})
+
+```
+
+```js
+const btnToast = document.querySelector('.show-Toast')
+btnToast.addEventListener('click', ()=>{
+    cuteToast({
+        type: 'error',
+        title: 'Toast Error',
+        message: 'Mistake! Give trouble.',
+        img: 'src/img/error.svg',
+        timer: 5000, 
+        playSound: 'src/sound/toast.mp3'
+        })
+})
+```
+
+```js
+const btnToast = document.querySelector('.show-Toast')
+btnToast.addEventListener('click', ()=>{
+    cuteToast({
+        type: 'info',
+        title: 'Toast Info',
+        message: 'This repository is open source !!',
+        img: 'src/img/info.svg',
+        timer: 5000, 
+        playSound: 'src/sound/toast.mp3'
+        })
+})
+```
+
+```js
+const btnToast = document.querySelector('.show-Toast')
+btnToast.addEventListener('click', ()=>{
+    cuteToast({
+        type: 'warning',
+        title: 'Toast Warning',
+        message: 'Warning! Open source is welcome!',
+        img: 'src/img/warning.svg',
+        timer: 5000, 
+        playSound: 'src/sound/toast.mp3'
+        })
+})
+
+```
 
 It also returns a Promise, so you can use ```then``` to execute an action after the toast is closed or reaches its end by a timer.
 
