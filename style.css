@@ -333,6 +333,10 @@
   background: #2dd284;
 }
 
+.dark-bg {
+  background: #010;
+}
+
 .warning-bg {
   background: #fada5e;
 }
@@ -347,6 +351,10 @@
 
 .success-btn:hover {
   background: #6edaa4;
+}
+
+.dark-btn:hover {
+  background: #020;
 }
 
 .warning-btn:hover {
@@ -367,6 +375,10 @@
 
 .success-timer {
   background: #6edaa4;
+}
+
+.dark-timer {
+  background: #010;
 }
 
 .warning-timer {
