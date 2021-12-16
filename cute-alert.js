@@ -46,12 +46,9 @@ const cuteAlert = ({
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
-        ${header ? '<div class="alert-header ' + type + '-bg">' : '<div class="alert-header">'}
+        ${header !== '' ? '<div class="alert-header-'+ header + ' ' + type + '-bg">' : '<div class="alert-header-default">'}
           <span class="alert-close ${
-            closeStyle !== ''
-              ? 'alert-close-'+closeStyle
-              : 'alert-close-hidden'
-          }">X</span>
+            closeStyle !== '' ? 'alert-close-'+closeStyle : 'alert-close-hidden'}">X</span>
           ${img !== '' ? '<img class="alert-img" src="' + src + '/' + img + '" />' : ''}
         </div>
         <div class="alert-body">
