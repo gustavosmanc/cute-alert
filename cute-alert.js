@@ -4,7 +4,7 @@ const cuteAlert = ({
   type,
   title,
   message,
-  img,
+  img = '',
   buttonText = 'OK',
   confirmText = 'OK',
   cancelText = 'Cancel',
