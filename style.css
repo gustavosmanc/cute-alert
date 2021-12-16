@@ -44,12 +44,16 @@
   animation: open-frame 0.3s linear;
 }
 
-.alert-header {
+.alert-header-default {
   display: flex;
   flex-direction: row;
   height: 175px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.alert-header-hidden {
+  display: none;
 }
 
 .alert-img {
