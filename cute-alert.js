@@ -9,7 +9,7 @@ const cuteAlert = ({
   confirmText = 'OK',
   cancelText = 'Cancel',
   closeStyle = 'default',
-  header = true,
+  header = 'default',
 }) => {
   return new Promise(resolve => {
     const existingAlert = document.querySelector('.alert-wrapper');
@@ -43,6 +43,21 @@ const cuteAlert = ({
       `;
     }
 
+    if (type === 'input') {
+      btnTemplate = `
+       <input type="text" class="alert-input">
+       <button class="alert-button input-bg input-btn">${buttonText}</button>
+      `;
+    }
+
+    let msgtemplate = `
+    <span class="alert-message">${message}</span>
+    `
+
+    if (type === 'input'){
+      msgtemplate = ``
+    }
+
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
@@ -53,7 +68,7 @@ const cuteAlert = ({
         </div>
         <div class="alert-body">
           <span class="alert-title">${title}</span>
-          <span class="alert-message">${message}</span>
+          ${msgtemplate}
           ${btnTemplate}
         </div>
       </div>
@@ -65,6 +80,8 @@ const cuteAlert = ({
     const alertWrapper = document.querySelector('.alert-wrapper');
     const alertFrame = document.querySelector('.alert-frame');
     const alertClose = document.querySelector('.alert-close');
+    
+
 
     if (type === 'question') {
       const confirmButton = document.querySelector('.confirm-button');
@@ -86,12 +103,22 @@ const cuteAlert = ({
         alertWrapper.remove();
         resolve('ok');
       });
+
+      if (type === 'input'){
+        const alertInput = document.querySelector('.alert-input')
+      
+        alertInput.addEventListener('change', e =>{
+          resolve(e.target.value)
+        })
+      }
     }
 
     alertClose.addEventListener('click', () => {
       alertWrapper.remove();
       resolve('close');
     });
+
+
 
 /*     alertWrapper.addEventListener('click', () => {
       alertWrapper.remove();
@@ -104,7 +131,7 @@ const cuteAlert = ({
   });
 };
 
-const cuteToast = ({ type, title, message, img, timer = 5000 }) => {
+const cuteToast = ({ type, title, message, img, timer = 5000, position = 'right' }) => {
   return new Promise(resolve => {
     const body = document.querySelector('body');
 
@@ -118,14 +145,14 @@ const cuteToast = ({ type, title, message, img, timer = 5000 }) => {
       }
     }
 
-    let templateContainer = document.querySelector('.toast-container');
+    let templateContainer = document.querySelector(`.toast-container-${position}`);
 
     if (!templateContainer) {
       body.insertAdjacentHTML(
         'afterend',
-        '<div class="toast-container"></div>',
+        `<div class="toast-container-${position}"></div>`,
       );
-      templateContainer = document.querySelector('.toast-container');
+      templateContainer = document.querySelector(`.toast-container-${position}`);
     }
 
     const toastId = id();
