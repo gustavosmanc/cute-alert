@@ -4,13 +4,12 @@ const cuteAlert = ({
   type,
   title,
   message,
-  img,
+  img = '',
   buttonText = 'OK',
   confirmText = 'OK',
-  vibrate = [],
-  playSound = null,
   cancelText = 'Cancel',
-  closeStyle,
+  closeStyle = 'default',
+  header = 'default',
 }) => {
   return new Promise(resolve => {
     const existingAlert = document.querySelector('.alert-wrapper');
@@ -44,29 +43,32 @@ const cuteAlert = ({
       `;
     }
 
-    if (vibrate.length > 0) {
-      navigator.vibrate(vibrate);
+    if (type === 'input') {
+      btnTemplate = `
+       <input type="text" class="alert-input">
+       <button class="alert-button input-bg input-btn">${buttonText}</button>
+      `;
     }
 
-    if (playSound !== null) {
-      let sound = new Audio(playSound);
-      sound.play();
+    let msgtemplate = `
+    <span class="alert-message">${message}</span>
+    `
+
+    if (type === 'input'){
+      msgtemplate = ``
     }
 
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
-        ${img !== '' ? '<div class="alert-header ' + type + '-bg">' : '<div>'}
+        ${header !== '' ? '<div class="alert-header-'+ header + ' ' + type + '-bg">' : '<div class="alert-header-default">'}
           <span class="alert-close ${
-            closeStyle === 'circle'
-              ? 'alert-close-circle'
-              : 'alert-close-default'
-          }">X</span>
+            closeStyle !== '' ? 'alert-close-'+closeStyle : 'alert-close-hidden'}">X</span>
           ${img !== '' ? '<img class="alert-img" src="' + src + '/' + img + '" />' : ''}
         </div>
         <div class="alert-body">
           <span class="alert-title">${title}</span>
-          <span class="alert-message">${message}</span>
+          ${msgtemplate}
           ${btnTemplate}
         </div>
       </div>
@@ -78,6 +80,8 @@ const cuteAlert = ({
     const alertWrapper = document.querySelector('.alert-wrapper');
     const alertFrame = document.querySelector('.alert-frame');
     const alertClose = document.querySelector('.alert-close');
+    
+
 
     if (type === 'question') {
       const confirmButton = document.querySelector('.confirm-button');
@@ -99,12 +103,22 @@ const cuteAlert = ({
         alertWrapper.remove();
         resolve('ok');
       });
+
+      if (type === 'input'){
+        const alertInput = document.querySelector('.alert-input')
+      
+        alertInput.addEventListener('change', e =>{
+          resolve(e.target.value)
+        })
+      }
     }
 
     alertClose.addEventListener('click', () => {
       alertWrapper.remove();
       resolve('close');
     });
+
+
 
 /*     alertWrapper.addEventListener('click', () => {
       alertWrapper.remove();
@@ -117,7 +131,7 @@ const cuteAlert = ({
   });
 };
 
-const cuteToast = ({ type, message, timer = 5000,  vibrate = [], playSound = null }) => {
+const cuteToast = ({ type, title, message, img, timer = 5000, position = 'right' }) => {
   return new Promise(resolve => {
     const body = document.querySelector('body');
 
@@ -131,14 +145,14 @@ const cuteToast = ({ type, message, timer = 5000,  vibrate = [], playSound = nul
       }
     }
 
-    let templateContainer = document.querySelector('.toast-container');
+    let templateContainer = document.querySelector(`.toast-container-${position}`);
 
     if (!templateContainer) {
       body.insertAdjacentHTML(
         'afterend',
-        '<div class="toast-container"></div>',
+        `<div class="toast-container-${position}"></div>`,
       );
-      templateContainer = document.querySelector('.toast-container');
+      templateContainer = document.querySelector(`.toast-container-${position}`);
     }
 
     const toastId = id();
@@ -171,15 +185,6 @@ const cuteToast = ({ type, message, timer = 5000,  vibrate = [], playSound = nul
     }
 
     const toastContent = document.getElementById(`${toastId}-toast-content`);
-
-    if (vibrate.length > 0) {
-      navigator.vibrate(vibrate);
-    }
-
-    if (playSound !== null) {
-      let sound = new Audio(playSound);
-      sound.play();
-    }
 
     setTimeout(() => {
       toastContent.remove();

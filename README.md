@@ -23,20 +23,121 @@ It's way too simple for you to import this lib into your code, all you have to d
 
 ```type``` will define what kind of alert box will be shown.
 
-![img](https://i.imgur.com/BHqM7Mm.png)
-![img](https://i.imgur.com/mLAfKh7.png)
-![img](https://i.imgur.com/6012avM.png)
-![img](https://i.imgur.com/E9BUQeV.png)
+```js
+const btnSuccess = document.querySelector('.show-Success')
+btnSuccess.addEventListener('click', () =>{
+    cuteAlert({
+        type: "success",
+        title: "Success",
+        message: "Success in life!!",
+        img: "src/img/success.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/success.mp3',
+})
+})
+```
+
+```js
+const btnError = document.querySelector('.show-Error')
+btnError.addEventListener('click', () =>{
+    cuteAlert({
+        type: "error",
+        title: "Error",
+        message: "Error in broeser",
+        img: "src/img/error.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/error.mp3',
+})
+})
+```
+
+```js
+const btnInfo = document.querySelector('.show-Info')
+btnInfo.addEventListener('click', () =>{
+    cuteAlert({
+        type: "info",
+        title: "Info",
+        message: "The world die",
+        img: "src/img/info.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/info.mp3',
+        closeStyle: 'circle',
+})
+})
+```
+
+```js
+const btnWarning = document.querySelector('.show-Warning')
+btnWarning.addEventListener('click', () =>{
+    cuteAlert({
+        type: "warning",
+        title: "Warning",
+        message: "Death in minutes...",
+        img: "src/img/warning.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/warning.mp3',
+})
+})
+
+```
+
+```js
+const btnQuestion = document.querySelector('.show-Question')
+btnQuestion.addEventListener('click', () =>{
+    cuteAlert({
+        type: "question",
+        title: "Contributors",
+        message: "hello do you want to give the repository a star?",
+        img: "src/img/question.svg",
+        confirmText: "Conform",
+        cancelText: 'Cancel',
+        playSound: 'src/sound/Question.mp3',
+})
+})
+```
 
 ```cuteAlert()```returns a Promise, so you can use ```then``` to execute an action after the alert box frame is closed.
 
-![img](https://i.imgur.com/i4OZ7NV.png)
+```js
+const btnError = document.querySelector('.show-Error')
+btnError.addEventListener('click', () =>{
+    cuteAlert({
+        type: "error",
+        title: "Error",
+        message: "Error in broeser",
+        img: "src/img/error.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/error.mp3',
+}).then(() =>{
+    location.reload()
+})
+})
+```
 
 As for the question alert box, you can choose what you want to do after any of the buttons is pressed with ```then``` aswell.
 
 ```confirmText``` and ```cancelText``` are both optional, by the default they are set as "Confirm" and "Cancel" respectively.
 
-![img](https://i.imgur.com/VFoRvKR.png)
+```js
+const btnQuestion = document.querySelector('.show-Question')
+btnQuestion.addEventListener('click', () =>{
+    cuteAlert({
+        type: "question",
+        title: "Contributors",
+        message: "hello do you want to give the repository a star?",
+        img: "src/img/question.svg",
+        confirmText: "Conform",
+        cancelText: 'Cancel',
+        playSound: 'src/sound/Question.mp3',
+}).then(e =>{
+    if(e === 'confirm'){
+        alert('Thanks!')
+    }else{
+        alert(':-(')
+    }
+})
+})
+```
 
 ### Close button as a circle
 
@@ -46,7 +147,20 @@ If you wish to have the close button styled as a circle, you need to pass ```clo
   <img src="https://i.imgur.com/Ak2JidL.png" />
 </p>
 
-![img](https://i.imgur.com/QPYnAyg.png)
+```js
+const btnSuccess = document.querySelector('.show-Success')
+btnSuccess.addEventListener('click', () =>{
+    cuteAlert({
+        type: "success",
+        title: "Success",
+        message: "Success in life!!",
+        img: "src/img/success.svg",
+        buttonText: "OK",
+        playSound: 'src/sound/success.mp3',
+        closeStyle: 'circle',
+})
+})
+```
 
 ### Toasts
 
@@ -56,10 +170,63 @@ If you wish to have the close button styled as a circle, you need to pass ```clo
 
 It's even easier to use toasts, all you have to do is call ```cuteToast()``` and pass ```type```, ```message``` and ```timer```(in miliseconds) as its arguments.
 
-![img](https://i.imgur.com/IDUChOO.png)
-![img](https://i.imgur.com/HlaJCxL.png)
-![img](https://i.imgur.com/hpGOQmh.png)
-![img](https://i.imgur.com/LXBz631.png)
+```js
+const btnToast = document.querySelector('.show-Toast')
+btnToast.addEventListener('click', ()=>{
+    cuteToast({
+        type: 'success',
+        title: 'Toast Success',
+        message: 'Success!! We are on the right way!',
+        img: 'src/img/success.svg',
+        timer: 5000, 
+        playSound: 'src/sound/toast.mp3'
+        })
+})
+
+```
+
+```js
+const btnToast = document.querySelector('.show-Toast')
+btnToast.addEventListener('click', ()=>{
+    cuteToast({
+        type: 'error',
+        title: 'Toast Error',
+        message: 'Mistake! Give trouble.',
+        img: 'src/img/error.svg',
+        timer: 5000, 
+        playSound: 'src/sound/toast.mp3'
+        })
+})
+```
+
+```js
+const btnToast = document.querySelector('.show-Toast')
+btnToast.addEventListener('click', ()=>{
+    cuteToast({
+        type: 'info',
+        title: 'Toast Info',
+        message: 'This repository is open source !!',
+        img: 'src/img/info.svg',
+        timer: 5000, 
+        playSound: 'src/sound/toast.mp3'
+        })
+})
+```
+
+```js
+const btnToast = document.querySelector('.show-Toast')
+btnToast.addEventListener('click', ()=>{
+    cuteToast({
+        type: 'warning',
+        title: 'Toast Warning',
+        message: 'Warning! Open source is welcome!',
+        img: 'src/img/warning.svg',
+        timer: 5000, 
+        playSound: 'src/sound/toast.mp3'
+        })
+})
+
+```
 
 It also returns a Promise, so you can use ```then``` to execute an action after the toast is closed or reaches its end by a timer.
 
@@ -76,3 +243,4 @@ It also returns a Promise, so you can use ```then``` to execute an action after 
 ## Contributors
 
 - **Leonardo Bertoncin** - [lbert1](https://github.com/lbert1)
+- **Gabriel Dutra** - [DutraGames](https://github.com/DutraGames)
