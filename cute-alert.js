@@ -117,7 +117,7 @@ const cuteAlert = ({
   });
 };
 
-const cuteToast = ({ type, message, timer = 5000,  vibrate = [], playSound = null }) => {
+const cuteToast = ({ type, title, message, timer = 5000,  vibrate = [], playSound = null }) => {
   return new Promise(resolve => {
     const body = document.querySelector('body');
 
@@ -148,8 +148,7 @@ const cuteToast = ({ type, message, timer = 5000,  vibrate = [], playSound = nul
       <div>
         <div class="toast-frame">
           <div class="toast-body">
-            
-            ${img !== '' ? '<img class="toast-body-img" src="' + src + '/' + img + '" />' : ''}
+            <img class="toast-body-img" src="${src}/img/${type}.svg" />'
             <div class="toast-body-content">
               <span class="toast-title">${title}</span>
               <span class="toast-message">${message}</span>
@@ -157,7 +156,7 @@ const cuteToast = ({ type, message, timer = 5000,  vibrate = [], playSound = nul
             <div class="toast-close" id="${toastId}-toast-close">X</div>
           </div>
         </div>
-        ${img !== '' ? '<div class="toast-timer ' + type + '-timer"  style="animation: timer' + timer + 'ms linear;>' : ''}
+        <div class="toast-timer ${type}-timer"  style="animation: timer${timer}ms linear;>
       </div>
     </div>
     `;
