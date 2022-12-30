@@ -52,6 +52,20 @@
   border-top-right-radius: 5px;
 }
 
+.alert-header-base {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.custom-img-wrapper {
+  min-height: 145px;
+  max-height: 20rem;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .alert-img {
   height: 80px;
   position: absolute;
