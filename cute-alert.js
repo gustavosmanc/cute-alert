@@ -57,13 +57,26 @@ const cuteAlert = ({
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
-        ${img !== '' ? '<div class="alert-header ' + type + '-bg">' : '<div>'}
+        ${
+          img === undefined
+            ? '<div class="alert-header ' + type + '-bg">'
+            : '<div class="alert-header-base">'
+        }
           <span class="alert-close ${
             closeStyle === 'circle'
               ? 'alert-close-circle'
               : 'alert-close-default'
           }">X</span>
-          ${img !== '' ? '<img class="alert-img" src="' + src + '/' + img + '" />' : ''}
+          ${
+            img === undefined
+              ? '<img class="alert-img" src="' +
+                src +
+                "/img/" +
+                type +
+                ".svg" +
+                '" />'
+              : '<div class="custom-img-wrapper">' + img + "</div>"
+          }
         </div>
         <div class="alert-body">
           <span class="alert-title">${title}</span>
