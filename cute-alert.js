@@ -1,6 +1,7 @@
 // Alert box design by Igor Ferrão de Souza: https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/
 
 const cuteAlert = ({
+  url,
   type,
   title,
   message,
@@ -197,3 +198,16 @@ const cuteToast = ({ type, title, message, timer = 5000,  vibrate = [], playSoun
 const id = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
 };
+
+if(url){
+  var toastTypes = ["success","error","warning","info","question"]
+  var src = ["https://svgshare.com/i/jVz.svg","https://svgshare.com/i/jUv.svg","https://svgshare.com/i/jW0.svg","https://svgshare.com/i/jWA.svg","https://svgshare.com/i/jUw.svg"];
+  for (var i = 0; i < document.getElementsByClassName("alert-img").length; i++) {
+    for (var j = 0; j < toastTypes.length; j++) {
+      if (document.getElementsByClassName("alert-img")[i].parentElement.classList.contains(toastTypes[j]+"-bg")) {
+        document.getElementsByClassName("alert-img")[i].src = src[j];
+      }
+    }
+  }
+}
+
