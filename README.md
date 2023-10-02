@@ -8,28 +8,40 @@
 I created this JS library as an open-source project (for studying purposes) to provide beautiful alert box messages made with HTML, CSS, and JS only. Feel free to contribute with a pull request or suggestions.
 
 ## Table of Contents
-1. [Installation Instructions](#installation-instructions)
-2. [Docs](#docs)
+1. [Getting Started](#getting-started)
+2. [Installation Instructions](#installation-instructions)
+3. [Docs](#docs)
+   - [Alert Types and Toasts](#alert-types-and-toasts)
    - [Alert Box](#alert-box)
    - [Close Button as a Circle](#close-button-as-a-circle)
    - [Toasts](#toasts)
-3. [Alert Box Design](#alert-box-design)
-4. [Dev](#dev)
-5. [Contributors](#Contributors)
-   
-## Installation Instructions
-- Clone this repository into your project's lib folder.
-  ```
+4. [Alert Box Design](#alert-box-design)
+5. [Dev](#dev)
+
+## Getting Started
+To get started with the project, you can clone the repository and navigate into the project directory by running the following commands in your terminal:
+
+ ```
   git clone https://github.com/gustavosmanc/cute-alert.git
   cd cute-alert
   ```
-- Import both "style.css" and "cute-alert.js" into your code just like described on the image below:
+   
+
+## Installation Instructions
+After cloning the repository and navigating into the project's directory, import both "style.css" and "cute-alert.js" into your code just like described on the image below:
 
 ![img](https://i.imgur.com/GuK5Uov.png)
 
 ## Docs
 
-It's way too simple for you to import this lib into your code, all you have to do is call ```cuteAlert()``` and pass its arguments in object notation.
+### Alert Types and Toasts
+This library provides different types of alert boxes, each serving a unique purpose:
+- **Success Alert**: Indicates a successful operation.
+- **Error Alert**: Informs the user of an error or failure.
+- **Warning Alert**: Serves as a warning or caution to the user.
+- **Question Alert**: Asks the user a question requiring acknowledgment or action.
+
+**Toasts** are lightweight notifications designed to mimic the analogy of popping up like a toast. They are used to display brief, auto-expiring information to the user and are less intrusive than alert boxes.
 
 ### Alert Box
 ```buttonText``` is an optional parameter, by default it's set as "OK".
@@ -77,5 +89,3 @@ It also returns a Promise, so you can use ```then``` to execute an action after 
 
 ## Dev
 - **Gustavo Mancuzo** - [gustavosmanc](https://github.com/gustavosmanc)
-## Contributors
-- **Leonardo Bertoncin** - [lbert1](https://github.com/lbert1)
