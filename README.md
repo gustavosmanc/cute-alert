@@ -17,6 +17,8 @@ I created this JS library as an open-source project (for studying purposes) to p
    - [Toasts](#toasts)
 4. [Alert Box Design](#alert-box-design)
 5. [Dev](#dev)
+6. [Contributors](#Contributors)
+
 
 ## Getting Started
 To get started with the project, you can clone the repository and navigate into the project directory by running the following commands in your terminal:
@@ -89,3 +91,6 @@ It also returns a Promise, so you can use ```then``` to execute an action after 
 
 ## Dev
 - **Gustavo Mancuzo** - [gustavosmanc](https://github.com/gustavosmanc)
+  
+## Contributors
+- **Leonardo Bertoncin** - [lbert1](https://github.com/lbert1)
