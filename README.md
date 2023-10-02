@@ -19,6 +19,10 @@ I created this JS library as an open-source project (for studying purposes) to p
    
 ## Installation Instructions
 - Clone this repository into your project's lib folder.
+  ```
+  git clone https://github.com/gustavosmanc/cute-alert.git
+  cd cute-alert
+  ```
 - Import both "style.css" and "cute-alert.js" into your code just like described on the image below:
 
 ![img](https://i.imgur.com/GuK5Uov.png)
