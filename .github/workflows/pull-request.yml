@@ -2,7 +2,7 @@ name: Pull request checks
 on:
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -61,4 +61,3 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm run test
-        

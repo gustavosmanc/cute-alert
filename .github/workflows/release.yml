@@ -1,7 +1,7 @@
 name: Release & Publish to NPM
 on:
   push:
-    branches: "main"
+    branches: 'master'
 jobs:
   release:
     runs-on: ubuntu-latest
