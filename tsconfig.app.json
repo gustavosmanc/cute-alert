@@ -1,0 +1,21 @@
+{
+  "include": ["env.d.ts", "src/**/*"],
+  "exclude": ["src/**/*.spec.ts"],
+  "compilerOptions": {
+    "resolvePackageJsonExports": false,
+    "verbatimModuleSyntax": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "types": ["node"],
+    "declaration": true,
+    "outDir": "dist",
+    "declarationDir": "dist",
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

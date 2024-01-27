@@ -1,0 +1,85 @@
+{
+  "name": "cute-alert",
+  "description": "Open-source JavaScript library that aims on providing beautiful alert box messages for your website.",
+  "homepage": "https://github.com/gustavosmanc/cute-alert#readme",
+  "bugs": {
+    "url": "https://github.com/gustavosmanc/cute-alert/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavosmanc/cute-alert.git"
+  },
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/cute-alert.umd.js",
+  "module": "./dist/cute-alert.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/cute-alert.es.js",
+      "require": "./dist/cute-alert.umd.js"
+    }
+  },
+  "types": "./dist/main.d.ts",
+  "scripts": {
+    "build-only": "vite build",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "test": "vitest",
+    "test:ci": "vitest run --coverage --test-timeout=10000 --retry=2",
+    "coverage": "vitest run --coverage",
+    "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/",
+    "precommit": "lint-staged",
+    "prepare": "is-ci || husky install",
+    "release": "release-it --verbose --ci",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "18.6.0",
+    "@commitlint/config-conventional": "18.6.0",
+    "@release-it/conventional-changelog": "8.0.1",
+    "@storybook/addon-essentials": "7.6.10",
+    "@storybook/addon-interactions": "7.6.10",
+    "@storybook/addon-links": "7.6.10",
+    "@storybook/blocks": "7.6.10",
+    "@storybook/html": "7.6.10",
+    "@storybook/html-vite": "7.6.10",
+    "@storybook/test": "7.6.10",
+    "@tsconfig/node21": "^21.0.1",
+    "@types/jsdom": "21.1.6",
+    "@types/node": "20.11.8",
+    "@vitest/coverage-v8": "1.2.2",
+    "auto-changelog": "2.4.0",
+    "auto-prefixer": "0.4.2",
+    "commitlint-plugin-function-rules": "3.0.0",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-no-only-tests": "3.1.0",
+    "eslint-plugin-storybook": "0.6.15",
+    "eslint-plugin-unused-imports": "3.0.0",
+    "husky": "9.0.6",
+    "is-ci": "3.0.1",
+    "jsdom": "24.0.0",
+    "lint-staged": "15.2.0",
+    "prettier": "3.2.4",
+    "prettier-plugin-organize-imports": "3.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "release-it": "17.0.3",
+    "storybook": "7.6.10",
+    "typescript": "5.3.3",
+    "vite": "5.0.12",
+    "vite-plugin-dts": "3.7.2",
+    "vitest": "1.2.2"
+  }
+}

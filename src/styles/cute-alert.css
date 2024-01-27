@@ -7,14 +7,14 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  margin: 0px auto;
-  padding: 0px auto;
+  margin: 0 auto;
+  padding: 0 auto;
   left: 0;
   top: 0;
   overflow: hidden;
   position: fixed;
   background: rgb(0, 0, 0, 0.3);
-  z-index: 999999;
+  z-index: 10;
 }
 
 @keyframes open-frame {
@@ -37,73 +37,53 @@
 
 .alert-frame {
   background: #fff;
-  min-height: 400px;
-  width: 300px;
+  min-width: 300px;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 0.5rem;
   animation: open-frame 0.3s linear;
 }
 
 .alert-header {
   display: flex;
-  flex-direction: row;
-  height: 175px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.alert-header-base {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.custom-img-wrapper {
-  min-height: 145px;
-  max-height: 20rem;
-  overflow: scroll;
-  display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
-}
-
-.alert-img {
-  height: 80px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  align-self: center;
+  padding: 2rem;
+  flex-direction: row;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 .alert-close {
-  width: 30px;
-  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Dosis', sans-serif;
   font-weight: 700;
   cursor: pointer;
-  line-height: 30px;
+  line-height: 2rem;
 }
 
 .alert-close-default {
   color: rgb(0, 0, 0, 0.2);
-  font-size: 16px;
+  font-size: 1rem;
   transition: color 0.5s;
-  margin-left: auto;
-  margin-right: 5px;
-  margin-top: 5px;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
 }
 
 .alert-close-circle {
   background: #e4eae7;
   color: #222;
-  border-radius: 17.5px;
-  margin-top: -15px;
-  margin-right: -15px;
-  font-size: 12px;
+  border-radius: 1rem;
+  margin-top: -1rem;
+  margin-right: -1rem;
+  font-size: 0.75rem;
   transition: background 0.5s;
   margin-left: auto;
 }
@@ -117,104 +97,75 @@
 }
 
 .alert-body {
-  padding: 30px 30px;
+  padding: 2rem;
+  gap: 2rem;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
 .alert-title {
-  font-size: 18px !important;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  font-size: 15px;
-  margin-bottom: 35px;
+  font-size: 1rem;
   color: #222;
   align-self: center;
 }
 
-.alert-message {
-  font-size: 15px !important;
+.alert-description {
+  font-size: 0.875rem;
   color: #666;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 15px;
   text-align: center;
-  margin-bottom: 35px;
   line-height: 1.6;
   align-self: center;
 }
 
-.alert-button {
-  min-width: 140px;
-  height: 35px;
-  border-radius: 20px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.5s;
-  padding: 0 15px;
-  align-self: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.alert-button:focus {
-  outline: 0;
-}
-
-.question-buttons {
+.buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 0.5rem;
 }
 
-.confirm-button {
-  min-width: 100px;
-  height: 35px;
-  border-radius: 20px;
+.primary-button {
+  border-radius: 1rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.875rem;
   color: white;
   border: none;
   cursor: pointer;
   transition: background 0.5s;
-  padding: 0 15px;
-  margin-right: 10px;
+  padding: 0.25rem 2rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.confirm-button:focus {
+.primary-button:focus {
   outline: 0;
 }
 
-.cancel-button {
-  min-width: 100px;
-  height: 35px;
-  border-radius: 20px;
+.secondary-button {
+  border-radius: 1rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.875rem;
   color: white;
   border: none;
   cursor: pointer;
   padding: 0;
   line-height: 1.6;
   transition: background 0.5s;
-  padding: 0 15px;
+  padding: 0.25rem 2rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.cancel-button:focus {
+.secondary-button:focus {
   outline: 0;
 }
 
@@ -240,36 +191,28 @@
 .toast-container {
   display: flex;
   flex-direction: column;
-  top: 15px;
-  right: 15px;
+  top: 1rem;
+  right: 1rem;
   position: fixed;
-  z-index: 999999;
+  z-index: 10;
 }
 
 .toast-content {
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 0.25rem;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
   animation: open-toast 0.3s linear;
 }
 
 .toast-content + .toast-content {
-  margin-top: 10px;
+  margin-top: 0.75rem;
 }
 
 .toast-frame {
-  padding: 5px 15px;
+  padding: 0.75rem 1rem;
   display: flex;
-  min-width: 100px;
-  height: 70px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.toast-body-img {
-  height: 40px;
 }
 
 .toast-body {
@@ -282,34 +225,30 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 0 1.5rem 0 1rem;
 }
 
 .toast-title {
-  font-size: 16px !important;
+  font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  font-size: 15px;
   color: #fff;
-  margin-left: 15px;
 }
 
-.toast-message {
-  font-size: 13px !important;
+.toast-description {
+  font-size: 0.875rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  font-size: 15px;
   color: #fff;
-  margin-left: 15px;
 }
 
 .toast-close {
   color: rgb(0, 0, 0, 0.2);
   font-family: 'Dosis', sans-serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: color 0.5s;
-  margin-left: 25px;
 }
 
 @keyframes timer {
@@ -332,7 +271,7 @@
 
 .toast-timer {
   width: 1%;
-  height: 5px;
+  height: 0.25rem;
 }
 
 .toast-close:hover {
