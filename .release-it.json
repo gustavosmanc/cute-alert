@@ -8,7 +8,7 @@
     "push": true
   },
   "hooks": {
-    "before:init": ["npm run lint", "npm run type-check", "npm run test:ci", "npm run build"]
+    "before:init": ["npm run lint", "npm run type-check", "npm run coverage", "npm run build"]
   },
   "npm": {
     "publish": true,

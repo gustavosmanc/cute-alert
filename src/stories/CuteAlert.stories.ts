@@ -1,5 +1,4 @@
-import { cuteAlert } from '@/cute-alert'
-import '@/styles/cute-alert.css'
+import { cuteAlert } from '@/main'
 import type { StoryObj } from '@storybook/html'
 import { createButton } from './helpers/button/Button'
 
@@ -9,7 +8,8 @@ const callback = () =>
     title: 'What a nice title!',
     description: 'Avoid this path...',
     primaryButtonText: 'Primary',
-    secondaryButtonText: 'Secondary'
+    secondaryButtonText: 'Secondary',
+    timer: 5000
   })
 
 const meta = {

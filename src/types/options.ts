@@ -8,6 +8,7 @@ export type AlertOptions = {
   vibrationPattern?: number[]
   soundSrc?: string
   closeStyle?: 'default' | 'circle'
+  imageSrc?: string
   imageSize?: number
 }
 
@@ -18,5 +19,6 @@ export type ToastOptions = {
   timer?: number
   vibrationPattern?: number[]
   soundSrc?: string
+  imageSrc?: string
   imageSize?: number
 }

@@ -38,7 +38,17 @@ export default defineConfig({
       thresholds: {
         100: true
       },
-      exclude: [...configDefaults.exclude, '*.cjs', '*.d.ts', 'src/types/**']
+      exclude: [
+        ...configDefaults.exclude,
+        '*.cjs',
+        '*.d.ts',
+        'src/types/**',
+        '.storybook',
+        'src/stories',
+        'src/constants',
+        'src/lib/index.ts',
+        'src/main.ts'
+      ]
     }
   },
   resolve: {
