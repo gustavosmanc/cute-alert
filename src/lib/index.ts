@@ -1,2 +1,2 @@
-export { cuteAlert } from './cuteAlert'
-export { cuteToast } from './cuteToast'
+export { cuteAlert } from './alert/cuteAlert'
+export { cuteToast } from './toast/cuteToast'

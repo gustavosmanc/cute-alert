@@ -6,11 +6,11 @@ const options: ToastOptions = {
   type: 'success',
   title: 'Title',
   description: 'Description',
-  timer: undefined,
-  imageSize: undefined,
-  imageSrc: '',
+  timer: 5000,
+  vibrationPattern: [],
   soundSrc: '',
-  vibrationPattern: []
+  imageSrc: '',
+  imageSize: 32
 }
 
 const cssVariables = {

@@ -63,8 +63,8 @@ export const cuteAlert = ({
               ${primaryButtonTemplate}
               ${secondaryButtonTemplate}
             </div>
+            ${timerTemplate}
           </div>
-          ${timerTemplate}
         </div>
       </div>
     `
