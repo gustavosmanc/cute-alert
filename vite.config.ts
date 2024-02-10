@@ -2,6 +2,7 @@
 import * as path from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { configDefaults } from 'vitest/dist/config.js'
 
 export default defineConfig({
@@ -9,10 +10,10 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       tsconfigPath: 'tsconfig.app.json'
-    })
+    }),
+    libInjectCss()
   ],
   build: {
-    cssCodeSplit: true,
     lib: {
       entry: 'src/main.ts',
       name: 'CuteAlert',

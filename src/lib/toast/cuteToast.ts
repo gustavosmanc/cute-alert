@@ -14,7 +14,7 @@ export const cuteToast = ({
   imageSrc,
   imageSize = 32
 }: ToastOptions) => {
-  imageSrc = imageSrc || `/assets/icons/${type}.svg`
+  imageSrc = imageSrc || new URL(`../icons/${type}.svg`, import.meta.url).href
 
   return new Promise((resolve: ToastResolve) => {
     const body = document.querySelector('body')

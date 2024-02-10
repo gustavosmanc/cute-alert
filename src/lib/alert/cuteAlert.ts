@@ -17,7 +17,7 @@ export const cuteAlert = ({
   imageSrc,
   imageSize = 80
 }: AlertOptions) => {
-  imageSrc = imageSrc || `/assets/icons/${type}.svg`
+  imageSrc = imageSrc || new URL(`../icons/${type}.svg`, import.meta.url).href
 
   return new Promise((resolve: AlertResolve) => {
     const existingAlert = document.querySelector('.cute-alert')
