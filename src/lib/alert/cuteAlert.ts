@@ -26,10 +26,10 @@ export const cuteAlert = ({
       existingAlert.remove()
     }
 
-    const body = document.querySelector('body')
+    const alert = document.createElement('div')
+    alert.classList.add('cute-alert', `cute-alert--${type}`)
 
     const titleTemplate = title ? `<span class="cute-alert__title">${title}</span>` : ''
-
     const descriptionTemplate = description
       ? `<span class="cute-alert__description">${description}</span>`
       : ''
@@ -46,32 +46,29 @@ export const cuteAlert = ({
       ? `<div class="cute-alert__timer" style="animation: timer ${timer}ms linear"></div>`
       : ''
 
-    vibrate(vibrationPattern)
-    playSound(soundSrc)
-
-    const template = `
-      <div class="cute-alert cute-alert--${type}">
-        <div class="cute-alert__frame">
-          <div class="cute-alert__header">
-            <span class="cute-alert__close cute-alert__close--${closeStyle}">X</span>
-            <img class="cute-alert__image" src="${imageSrc}" height="${imageSize}" width="${imageSize}" />
+    alert.innerHTML = `
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--${closeStyle}">X</span>
+          <img class="cute-alert__image" src="${imageSrc}" height="${imageSize}" width="${imageSize}" />
+        </div>
+        <div class="cute-alert__body">
+          ${titleTemplate}
+          ${descriptionTemplate}
+          <div class="cute-alert__buttons">
+            ${primaryButtonTemplate}
+            ${secondaryButtonTemplate}
           </div>
-          <div class="cute-alert__body">
-            ${titleTemplate}
-            ${descriptionTemplate}
-            <div class="cute-alert__buttons">
-              ${primaryButtonTemplate}
-              ${secondaryButtonTemplate}
-            </div>
-            ${timerTemplate}
-          </div>
+          ${timerTemplate}
         </div>
       </div>
     `
 
-    body.insertAdjacentHTML('afterend', template)
+    document.body.appendChild(alert)
 
-    const alert = document.querySelector('.cute-alert')
+    vibrate(vibrationPattern)
+    playSound(soundSrc)
+
     const alertFrame = document.querySelector('.cute-alert__frame')
     const alertClose = document.querySelector('.cute-alert__close')
 

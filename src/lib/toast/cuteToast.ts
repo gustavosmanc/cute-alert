@@ -17,16 +17,17 @@ export const cuteToast = ({
   imageSrc = imageSrc || new URL(`../icons/${type}.svg`, import.meta.url).href
 
   return new Promise((resolve: ToastResolve) => {
-    const body = document.querySelector('body')
+    let toastWrapper = document.querySelector('.cute-toast-wrapper')
 
-    let templateWrapper = document.querySelector('.cute-toast-wrapper')
-
-    if (!templateWrapper) {
-      body.insertAdjacentHTML('afterend', `<div class="cute-toast-wrapper"></div>`)
-      templateWrapper = document.querySelector('.cute-toast-wrapper')
+    if (!toastWrapper) {
+      toastWrapper = document.createElement('div')
+      toastWrapper.classList.add('cute-toast-wrapper')
+      document.body.appendChild(toastWrapper)
     }
 
-    const toastId = '_' + Math.random().toString(36).substring(2, 9)
+    const toast = document.createElement('div')
+    toast.setAttribute('id', Math.random().toString(36).substring(2, 9))
+    toast.classList.add('cute-toast', `cute-toast--${type}`)
 
     const titleTemplate = title ? `<span class="cute-toast__title">${title}</span>` : ''
     const descriptionTemplate = description
@@ -37,35 +38,26 @@ export const cuteToast = ({
       ? `<div class="cute-toast__timer" style="animation: timer ${timer}ms linear"></div>`
       : ''
 
-    const templateContent = `
-      <div class="cute-toast cute-toast--${type}" id="cute-toast-${toastId}">
-        <div class="cute-toast__frame">
-          <div class="cute-toast__body">
-            <img class="cute-toast__image" src="${imageSrc}" height="${imageSize}" width="${imageSize}" />
-            <div class="cute-toast__content">
-              ${titleTemplate}
-              ${descriptionTemplate}
-            </div>
-            <div class="cute-toast__close">X</div>
+    toast.innerHTML = `
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="${imageSrc}" height="${imageSize}" width="${imageSize}" />
+          <div class="cute-toast__content">
+            ${titleTemplate}
+            ${descriptionTemplate}
           </div>
+          <div class="cute-toast__close">X</div>
         </div>
-        ${timerTemplate}
       </div>
+      ${timerTemplate}
     `
 
-    const toasts = document.querySelectorAll('.cute-toast')
-
-    if (toasts.length) {
-      toasts[0].insertAdjacentHTML('beforebegin', templateContent)
-    } else {
-      templateWrapper.innerHTML = templateContent
-    }
-
-    const toast = document.getElementById(`cute-toast-${toastId}`)
-    const toastClose = toast.querySelector('.cute-toast__close')
+    toastWrapper.appendChild(toast)
 
     vibrate(vibrationPattern)
     playSound(soundSrc)
+
+    const toastClose = toast.querySelector('.cute-toast__close')
 
     if (timer) {
       setTimeout(() => {
