@@ -25,4 +25,5 @@
 
 - [ ] I have linked an issue or discussion.
 - [ ] I have added tests (if necessary).
-- [ ] I have updated the documentation accordingly.
+- [ ] I have updated the documentation accordingly (if necessary).
+- [ ] My commits are following the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/#summary).

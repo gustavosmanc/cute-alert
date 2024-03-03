@@ -1,6 +1,6 @@
 {
   "name": "cute-alert",
-  "description": "Open-source JavaScript library that aims on providing beautiful alert box messages for your website.",
+  "description": "Simple open source JavaScript library that aims to provide beautiful alerts and toasts to your website.",
   "homepage": "https://github.com/gustavosmanc/cute-alert#readme",
   "bugs": {
     "url": "https://github.com/gustavosmanc/cute-alert/issues"
