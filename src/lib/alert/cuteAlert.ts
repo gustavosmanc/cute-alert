@@ -69,7 +69,6 @@ export const cuteAlert = ({
     vibrate(vibrationPattern)
     playSound(soundSrc)
 
-    const alertFrame = document.querySelector('.cute-alert__frame')
     const alertClose = document.querySelector('.cute-alert__close')
 
     const primaryButton = document.querySelector('.cute-alert__primary-btn')
@@ -99,10 +98,6 @@ export const cuteAlert = ({
     alertClose.addEventListener('click', () => {
       alert.remove()
       resolve(ALERT_RESOLVE_VALUES.CLOSE)
-    })
-
-    alertFrame.addEventListener('click', (e) => {
-      e.stopPropagation()
     })
   })
 }

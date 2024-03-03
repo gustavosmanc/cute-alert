@@ -104,13 +104,19 @@ Before pushing a PR, take into account the following checklist:
 
 ### Unit tests
 
-Having all the dependencies installed, simply execute one the following command to run unit tests:
+Running unit tests:
 
 ```bash
 npm run test
 ```
 
-Or run the one below if you want to run them with coverage:
+Updating snapshots:
+
+```bash
+npm run test:update-snapshots
+```
+
+Coverage:
 
 ```bash
 npm run coverage
@@ -133,5 +139,3 @@ npm run coverage
    ```
 
 3. Run `bundle exec jekyll serve` to serve the docs locally.
-
-We have coverage set to 100%, so it may be helpful to run it before pushing a PR.

@@ -4,6 +4,16 @@ import { ToastResolve } from '@/types/resolve'
 import { playSound } from '@/utils/sound/soundUtils'
 import { vibrate } from '@/utils/vibrate/vibrateUtils'
 
+export const closeToast = (toastWrapper: Element, toast: HTMLDivElement) => {
+  const toasts = document.querySelectorAll('.cute-toast')
+
+  if (toasts.length === 1) {
+    toastWrapper.remove()
+  } else {
+    toast.remove()
+  }
+}
+
 export const cuteToast = ({
   type,
   title,
@@ -26,7 +36,6 @@ export const cuteToast = ({
     }
 
     const toast = document.createElement('div')
-    toast.setAttribute('id', Math.random().toString(36).substring(2, 9))
     toast.classList.add('cute-toast', `cute-toast--${type}`)
 
     const titleTemplate = title ? `<span class="cute-toast__title">${title}</span>` : ''
@@ -61,13 +70,13 @@ export const cuteToast = ({
 
     if (timer) {
       setTimeout(() => {
-        toast.remove()
+        closeToast(toastWrapper, toast)
         resolve(TOAST_RESOLVE_VALUES.CLOSE)
       }, timer)
     }
 
     toastClose.addEventListener('click', () => {
-      toast.remove()
+      closeToast(toastWrapper, toast)
       resolve(TOAST_RESOLVE_VALUES.CLOSE)
     })
   })
