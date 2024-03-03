@@ -1,7 +1,7 @@
 {
   "git": {
     "requireCleanWorkingDir": false,
-    "requireBranch": "main",
+    "requireBranch": "master",
     "commit": false,
     "requireCommits": false,
     "tag": true,
