@@ -20,14 +20,14 @@
     "dist"
   ],
   "main": "./dist/cute-alert.umd.js",
-  "module": "./dist/cute-alert.es.js",
+  "module": "./dist/cute-alert.js",
   "exports": {
     ".": {
-      "import": "./dist/cute-alert.es.js",
+      "import": "./dist/cute-alert.js",
       "require": "./dist/cute-alert.umd.js"
     }
   },
-  "types": "./dist/main.d.ts",
+  "types": "./dist/cute-alert.d.ts",
   "scripts": {
     "build-only": "vite build",
     "build": "run-p type-check \"build-only {@}\" --",

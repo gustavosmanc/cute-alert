@@ -18,7 +18,7 @@ export default defineConfig({
       entry: 'src/main.ts',
       name: 'CuteAlert',
       formats: ['es', 'cjs', 'umd'],
-      fileName: (format) => `cute-alert.${format}.js`
+      fileName: 'cute-alert'
     },
     rollupOptions: {
       input: {
