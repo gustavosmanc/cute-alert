@@ -27,3 +27,6 @@ coverage
 
 # Pack
 *.tgz
+
+# Storybook
+storybook-static
