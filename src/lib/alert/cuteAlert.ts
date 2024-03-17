@@ -11,7 +11,7 @@ export const cuteAlert = ({
   timer,
   primaryButtonText,
   secondaryButtonText,
-  vibrationPattern = [],
+  vibrationPattern,
   soundSrc,
   closeStyle = 'default',
   imageSrc,

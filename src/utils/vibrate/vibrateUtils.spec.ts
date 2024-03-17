@@ -13,20 +13,20 @@ describe('vibrateUtils', () => {
       navigator.vibrate = originalVibrate
     })
 
-    it('vibrates when vibrate array is provided', () => {
-      const vibrateArray = [100, 200, 300]
+    it('vibrates when pattern is an array', () => {
+      const pattern = [100, 200, 300]
 
-      vibrate(vibrateArray)
+      vibrate(pattern)
 
-      expect(mockVibrate).toHaveBeenCalledWith(vibrateArray)
+      expect(mockVibrate).toHaveBeenCalledWith(pattern)
     })
 
-    it('does not vibrate when vibrate array is empty', () => {
-      const emptyArray: number[] = []
+    it('vibrates when pattern is a number', () => {
+      const pattern = 200
 
-      vibrate(emptyArray)
+      vibrate(pattern)
 
-      expect(mockVibrate).not.toHaveBeenCalled()
+      expect(mockVibrate).toHaveBeenCalledWith(pattern)
     })
   })
 })

@@ -19,7 +19,7 @@ export const cuteToast = ({
   title,
   description,
   timer,
-  vibrationPattern = [],
+  vibrationPattern,
   soundSrc,
   imageSrc,
   imageSize = 32

@@ -147,7 +147,7 @@
     font-family: var(--cute-alert-primary-button-font-family, 'Open Sans', sans-serif);
     font-weight: var(--cute-alert-primary-button-font-weight, 400);
     font-size: var(--cute-alert-primary-button-font-size, 0.875rem);
-    color: var(--cute-alert-primary-button-color, white);
+    color: var(--cute-alert-primary-button-color, #fff);
     background-color: var(--cute-alert-primary-button-background-color, var(--cute-alert-primary));
     border-radius: var(--cute-alert-primary-button-border-radius, 1rem);
     cursor: pointer;
@@ -173,7 +173,7 @@
     font-family: var(--cute-alert-secondary-button-font-family, 'Open Sans', sans-serif);
     font-weight: var(--cute-alert-secondary-button-font-weight, 400);
     font-size: var(--cute-alert-secondary-button-font-size, 0.875rem);
-    background-color: var(--cute-alert-secondary-button-background-color, white);
+    background-color: var(--cute-alert-secondary-button-background-color, #fff);
     cursor: pointer;
     transition: all 0.3s;
     padding: var(--cute-alert-secondary-button-padding, 0.5rem 2rem);

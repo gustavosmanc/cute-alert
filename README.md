@@ -67,7 +67,7 @@ cuteToast({
 
 Cute alert has built-in TypeScript support and provides a set of default exported types that you can import as named imports into your project like:
 
-```typescript
+```ts
 import type {
   AlertOptions,
   ToastOptions,

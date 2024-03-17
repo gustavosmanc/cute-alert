@@ -1,0 +1,8 @@
+title: Cute Alert
+theme: just-the-docs
+plugins:
+  - jekyll-feed
+callouts:
+  note:
+    title: Note
+    color: purple
