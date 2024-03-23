@@ -1,96 +1,141 @@
 # Cute Alert
 
-![img](https://i.imgur.com/fuKb4lG.png)
-<p align="center">
-  <img src="https://media.giphy.com/media/fwnMNrkWLs1TrxK6ab/giphy.gif" />
+<p>
+  <a href="https://www.npmjs.com/package/cute-alert"><img src="https://img.shields.io/npm/v/cute-alert.svg" alt="NPM Version"></a>
 </p>
 
-I created this JS library as an open-source project (for studying purposes) to provide beautiful alert box messages made with HTML, CSS, and JS only. Feel free to contribute with a pull request or suggestions.
+> Simple open source JavaScript library that aims to provide beautiful alerts and toasts to your website. Alerts inspired by [Igor Ferrão de Souza](https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/)'s design.
+
+Visit the [documentation](https://gustavosmanc.github.io/cute-alert/docs/) for more detailed instructions or [Storybook](https://gustavosmanc.github.io/cute-alert/storybook/) if you want to play around / check out the library.
 
 ## Table of Contents
+
 1. [Getting Started](#getting-started)
-2. [Installation Instructions](#installation-instructions)
-3. [Docs](#docs)
-   - [Alert Types and Toasts](#alert-types-and-toasts)
-   - [Alert Box](#alert-box)
-   - [Close Button as a Circle](#close-button-as-a-circle)
-   - [Toasts](#toasts)
-4. [Alert Box Design](#alert-box-design)
-5. [Dev](#dev)
-6. [Contributors](#Contributors)
+   - [Installation](#installation)
+     - [Alerts](#alerts)
+     - [Toasts](#toasts)
+   - [Usage](#usage)
+2. [TypeScript](#typescript)
+3. [Contributing](#contributing)
+   - [Setting up the project](#setting-up-the-project)
+   - [Unit tests](#unit-tests)
+   - [Setting up the docs](#setting-up-the-docs)
 
+## Getting started
 
-## Getting Started
-To get started with the project, you can clone the repository and navigate into the project directory by running the following commands in your terminal:
+### Installation
 
- ```
-  git clone https://github.com/gustavosmanc/cute-alert.git
-  cd cute-alert
-  ```
-   
+```bash
+npm install cute-alert
+```
 
-## Installation Instructions
-After cloning the repository and navigating into the project's directory, import both "style.css" and "cute-alert.js" into your code just like described on the image below:
+### Usage
 
-![img](https://i.imgur.com/GuK5Uov.png)
+#### Alerts
 
-## Docs
+```ts
+import { cuteAlert } from 'cute-alert'
 
-### Alert Types and Toasts
-This library provides different types of alert boxes, each serving a unique purpose:
-- **Success Alert**: Indicates a successful operation.
-- **Error Alert**: Informs the user of an error or failure.
-- **Warning Alert**: Serves as a warning or caution to the user.
-- **Question Alert**: Asks the user a question requiring acknowledgment or action.
+cuteAlert({
+  type: 'success',
+  title: 'Title',
+  description: 'Description',
+  timer: 5000,
+  primaryButtonText: 'Confirm',
+  secondaryButtonText: 'Cancel'
+})
+```
 
-**Toasts** are lightweight notifications designed to mimic the analogy of popping up like a toast. They are used to display brief, auto-expiring information to the user and are less intrusive than alert boxes.
+> Check out the [documentation](https://gustavosmanc.github.io/cute-alert/docs/alerts/) for more detailed instructions.
 
-### Alert Box
-```buttonText``` is an optional parameter, by default it's set as "OK".
-```type``` will define what kind of alert box will be shown.
+#### Toasts
 
-![img](https://i.imgur.com/BHqM7Mm.png)
-![img](https://i.imgur.com/mLAfKh7.png)
-![img](https://i.imgur.com/6012avM.png)
-![img](https://i.imgur.com/E9BUQeV.png)
+```ts
+import { cuteToast } from 'cute-alert'
 
-```cuteAlert()``` returns a Promise, so you can use ```then``` to execute an action after the alert box frame is closed.
+cuteToast({
+  type: 'success',
+  title: 'Title',
+  description: 'Description',
+  timer: 5000
+})
+```
 
-![img](https://i.imgur.com/i4OZ7NV.png)
+> Check out the [documentation](https://gustavosmanc.github.io/cute-alert/docs/toasts/) for more detailed instructions.
 
-As for the question alert box, you can choose what you want to do after any of the buttons is pressed with ```then``` as well.
-```confirmText``` and ```cancelText``` are both optional, by default they are set as "Confirm" and "Cancel" respectively.
+## TypeScript
 
-![img](https://i.imgur.com/VFoRvKR.png)
+Cute alert has built-in TypeScript support and provides a set of default exported types that you can import as named imports into your project like:
 
-### Close Button as a Circle
-If you wish to have the close button styled as a circle, you need to pass ```closeStyle: "circle"``` as an argument in ```cuteAlert()```.
+```ts
+import type {
+  AlertOptions,
+  ToastOptions,
+  AlertResolveValue,
+  ToastResolveValue,
+  AlertResolve,
+  ToastResolve
+} from 'cute-alert'
+```
 
-<p align="center">
-  <img src="https://i.imgur.com/Ak2JidL.png" />
-</p>
+## Contributing
 
-![img](https://i.imgur.com/QPYnAyg.png)
+Before pushing a PR, take into account the following checklist:
 
-### Toasts
-<p align="center">
-  <img src="https://media.giphy.com/media/fwnMNrkWLs1TrxK6ab/giphy.gif" />
-</p>
+- [ ] I have linked an issue or discussion.
+- [ ] I have added tests (if necessary).
+- [ ] I have updated the documentation accordingly (if necessary).
+- [ ] My commits are following the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/#summary).
 
-It's even easier to use toasts, all you have to do is call ```cuteToast()``` and pass ```type```, ```message```, and ```timer```(in milliseconds) as its arguments.
+### Setting up the project
 
-![img](https://i.imgur.com/IDUChOO.png)
-![img](https://i.imgur.com/HlaJCxL.png)
-![img](https://i.imgur.com/hpGOQmh.png)
-![img](https://i.imgur.com/LXBz631.png)
+1. Fork the repository and clone it.
+2. Install the dependencies on the repository:
 
-It also returns a Promise, so you can use ```then``` to execute an action after the toast is closed or reaches its end by a timer.
+   ```bash
+   npm install
+   ```
 
-## Alert Box Design
-- **Igor Ferrão de Souza** https://www.linkedin.com/in/igor-ferr%C3%A3o-de-souza-4122407b/
+3. Start storybook:
 
-## Dev
-- **Gustavo Mancuzo** - [gustavosmanc](https://github.com/gustavosmanc)
-  
-## Contributors
-- **Leonardo Bertoncin** - [lbert1](https://github.com/lbert1)
+   ```bash
+   npm run storybook
+   ```
+
+### Unit tests
+
+Running unit tests:
+
+```bash
+npm run test
+```
+
+Updating snapshots:
+
+```bash
+npm run test:update-snapshots
+```
+
+Coverage:
+
+```bash
+npm run coverage
+```
+
+### Setting up the docs
+
+> Make sure you have the latest [Ruby](https://www.ruby-lang.org/) version installed.
+
+1. Open up your terminal and install the `bundler` gem on version `2.4.22`:
+
+   ```bash
+   gem install bundler -v 2.4.22
+   ```
+
+2. Go to the `docs` folder and install the dependencies:
+
+   ```bash
+   bundle install
+   ```
+
+3. Run `bundle exec jekyll serve` to serve the docs locally.

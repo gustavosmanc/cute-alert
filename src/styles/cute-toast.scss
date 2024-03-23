@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+.cute-toast-wrapper {
+  display: flex;
+  flex-direction: column;
+  top: 1rem;
+  right: 1rem;
+  position: fixed;
+  z-index: var(--cute-toast-z-index, 10);
+  gap: var(--cute-toast-gap, 0.75rem);
+}
+
+.cute-toast {
+  overflow: hidden;
+  border-radius: var(--cute-toast-border-radius, 0.25rem);
+  box-shadow: var(--cute-toast-box-shadow, 0 0 20px rgb(0, 0, 0, 0.2));
+  animation: open-toast 0.3s linear;
+  background-color: var(--cute-toast-background-color, var(--cute-toast-primary));
+
+  &--error {
+    --cute-toast-primary: var(--cute-toast-color-error, #d85261);
+    --cute-toast-primary-light: var(--cute-toast-color-error-light, #e5a4b4);
+  }
+
+  &--success {
+    --cute-toast-primary: var(--cute-toast-color-success, #2dd284);
+    --cute-toast-primary-light: var(--cute-toast-color-success-light, #6edaa4);
+  }
+
+  &--warning {
+    --cute-toast-primary: var(--cute-toast-color-warning, #fada5e);
+    --cute-toast-primary-light: var(--cute-toast-color-warning-light, #fcecae);
+  }
+
+  &--info {
+    --cute-toast-primary: var(--cute-toast-color-info, #88cef7);
+    --cute-toast-primary-light: var(--cute-toast-color-info-light, #c3e6fb);
+  }
+
+  &__frame {
+    padding: var(--cute-toast-padding, 0.75rem 1rem);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    width: var(--cute-toast-width, 100%);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: var(--cute-toast-content-margin, 0 1.5rem 0 1rem);
+  }
+
+  &__title {
+    font-size: var(--cute-toast-title-font-size, 1rem);
+    font-family: var(--cute-toast-title-font-family, 'Open Sans', sans-serif);
+    font-weight: var(--cute-toast-title-font-weight, 700);
+    color: var(--cute-toast-title-color, #fff);
+  }
+
+  &__description {
+    font-size: var(--cute-toast-description-font-size, 0.875rem);
+    font-family: var(--cute-toast-description-font-family, 'Open Sans', sans-serif);
+    font-weight: var(--cute-toast-description-font-weight, 600);
+    color: var(--cute-toast-description-color, #fff);
+  }
+
+  &__close {
+    color: var(--cute-toast-close-color, rgb(0, 0, 0, 0.2));
+    font-family: 'Dosis', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.5s;
+
+    &:hover {
+      color: var(--cute-toast-close-color-hover, rgb(0, 0, 0, 0.5));
+    }
+  }
+
+  &__timer {
+    width: 1%;
+    height: 0.25rem;
+    background-color: var(--cute-toast-timer-background-color, var(--cute-toast-primary-light));
+  }
+
+  @keyframes open-toast {
+    0% {
+      transform: scaleX(1) scaleY(1);
+    }
+    20%,
+    45% {
+      transform: scaleX(1.35) scaleY(0.1);
+    }
+    65% {
+      transform: scaleX(0.8) scaleY(1.7);
+    }
+    80% {
+      transform: scaleX(0.6) scaleY(0.85);
+    }
+    100% {
+      transform: scaleX(1) scaleY(1);
+    }
+  }
+
+  @keyframes timer {
+    0% {
+      width: 100%;
+    }
+    25% {
+      width: 75%;
+    }
+    50% {
+      width: 50%;
+    }
+    75% {
+      width: 25%;
+    }
+    100% {
+      width: 1%;
+    }
+  }
+}

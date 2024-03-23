@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    rebase-strategy: "disabled"
+    reviewers:
+      - "gustavosmanc"
+    versioning-strategy: increase
+    open-pull-requests-limit: 100
+    groups:
+      vue:
+        patterns:
+        - "@vue*"
+        update-types:
+        - "minor"
+        - "patch"
+      types:
+        patterns:
+        - "@types*"
+        update-types:
+        - "minor"
+        - "patch"

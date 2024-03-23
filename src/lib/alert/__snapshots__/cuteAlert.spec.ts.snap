@@ -1,0 +1,261 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`cuteAlert > snapshots > should render alert with circle close style 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--circle">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/success.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render alert with custom image size 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/success.svg" height="48" width="48">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render alert with custom image source 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="random image source" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render alert with timer 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/success.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          <div class="cute-alert__timer" style="animation: timer 5000ms linear"></div>
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render alert without description 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/success.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render alert without primary button 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/success.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render alert without secondary button 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/success.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render alert without title 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/success.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render error alert 1`] = `
+"<div class="cute-alert cute-alert--error">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/error.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render info alert 1`] = `
+"<div class="cute-alert cute-alert--info">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/info.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render question alert 1`] = `
+"<div class="cute-alert cute-alert--question">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/question.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render success alert 1`] = `
+"<div class="cute-alert cute-alert--success">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/success.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;
+
+exports[`cuteAlert > snapshots > should render warning alert 1`] = `
+"<div class="cute-alert cute-alert--warning">
+      <div class="cute-alert__frame">
+        <div class="cute-alert__header">
+          <span class="cute-alert__close cute-alert__close--default">X</span>
+          <img class="cute-alert__image" src="/src/lib/icons/warning.svg" height="80" width="80">
+        </div>
+        <div class="cute-alert__body">
+          <span class="cute-alert__title">Title</span>
+          <span class="cute-alert__description">Description</span>
+          <div class="cute-alert__buttons">
+            <button class="cute-alert__primary-btn">Confirm</button>
+            <button class="cute-alert__secondary-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>"
+`;

@@ -1,0 +1,77 @@
+{
+  "git": {
+    "requireCleanWorkingDir": false,
+    "requireBranch": "master",
+    "commit": false,
+    "requireCommits": false,
+    "tag": true,
+    "push": true
+  },
+  "hooks": {
+    "before:init": ["npm run lint", "npm run type-check", "npm run coverage", "npm run build"]
+  },
+  "npm": {
+    "publish": true,
+    "ignoreVersion": true
+  },
+  "github": {
+    "release": true
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "feature",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          },
+          {
+            "type": "perf",
+            "section": "Performance Improvements"
+          },
+          {
+            "type": "revert",
+            "section": "Reverts"
+          },
+          {
+            "type": "docs",
+            "section": "Documentation"
+          },
+          {
+            "type": "style",
+            "section": "Styles"
+          },
+          {
+            "type": "chore",
+            "section": "Miscellaneous Chores"
+          },
+          {
+            "type": "refactor",
+            "section": "Code Refactoring"
+          },
+          {
+            "type": "test",
+            "section": "Tests"
+          },
+          {
+            "type": "build",
+            "section": "Build System"
+          },
+          {
+            "type": "ci",
+            "section": "Continuous Integration"
+          }
+        ]
+      }
+    }
+  }
+}

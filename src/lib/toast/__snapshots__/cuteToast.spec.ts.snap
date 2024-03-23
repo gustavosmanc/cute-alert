@@ -1,0 +1,173 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`cuteToast > snapshots > should render error toast 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--error">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/error.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Title</span>
+            <span class="cute-toast__description">Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render info toast 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--info">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/info.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Title</span>
+            <span class="cute-toast__description">Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render success toast 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--success">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/success.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Title</span>
+            <span class="cute-toast__description">Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render toast with custom image size 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--success">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/success.svg" height="48" width="48">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Title</span>
+            <span class="cute-toast__description">Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render toast with custom image source 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--success">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="random image source" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Title</span>
+            <span class="cute-toast__description">Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render toast with timer 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--success">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/success.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Title</span>
+            <span class="cute-toast__description">Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      <div class="cute-toast__timer" style="animation: timer 5000ms linear"></div>
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render toast without description 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--success">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/success.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Title</span>
+            
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render toast without title 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--success">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/success.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            
+            <span class="cute-toast__description">Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render two toasts 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--success">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/success.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">First Toast Title</span>
+            <span class="cute-toast__description">First Toast Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div><div class="cute-toast cute-toast--success">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/success.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Second Toast Title</span>
+            <span class="cute-toast__description">Second Toast Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;
+
+exports[`cuteToast > snapshots > should render warning toast 1`] = `
+"<div class="cute-toast-wrapper"><div class="cute-toast cute-toast--warning">
+      <div class="cute-toast__frame">
+        <div class="cute-toast__body">
+          <img class="cute-toast__image" src="/src/lib/icons/warning.svg" height="32" width="32">
+          <div class="cute-toast__content">
+            <span class="cute-toast__title">Title</span>
+            <span class="cute-toast__description">Description</span>
+          </div>
+          <div class="cute-toast__close">X</div>
+        </div>
+      </div>
+      
+    </div></div>"
+`;

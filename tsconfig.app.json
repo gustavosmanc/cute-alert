@@ -1,0 +1,28 @@
+{
+  "include": ["env.d.ts", "src/main.ts", "src/**/*"],
+  "exclude": ["src/**/*.spec.ts"],
+  "compilerOptions": {
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noImplicitThis": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolvePackageJsonExports": false,
+    "verbatimModuleSyntax": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "types": ["node"],
+    "declaration": true,
+    "outDir": "dist",
+    "declarationDir": "dist",
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
