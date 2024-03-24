@@ -55,7 +55,7 @@
     "@storybook/html-vite": "8.0.4",
     "@storybook/test": "8.0.4",
     "@testing-library/dom": "9.3.4",
-    "@tsconfig/node21": "21.0.1",
+    "@tsconfig/node21": "21.0.2",
     "@types/jsdom": "21.1.6",
     "@types/node": "20.11.30",
     "@vitest/coverage-v8": "1.4.0",
