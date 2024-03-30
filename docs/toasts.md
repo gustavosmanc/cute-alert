@@ -26,10 +26,17 @@ cuteToast({
   title: 'Title',
   description: 'Description',
   timer: 5000
+}).then((event) => {
+  if (event === 'close') {
+    console.log('toast closed')
+  }
 })
 ```
 
 [Storybook](https://gustavosmanc.github.io/cute-alert/storybook/?path=/story/cutealert-toast--playground){: .btn }
+
+{: .note }
+`event` has the `AlertToastValue` type and at the moment, its value will always be `close`. For more information about types, check out the [Typescript page](https://gustavosmanc.github.io/cute-alert/docs/typescript/).
 
 ## Options
 
@@ -49,10 +56,13 @@ cuteToast({
 * [Vibrate](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate)
 * [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio)
 
+{: .warning }
+Vibration will not work on Safari as the `vibrate()` method is not compatible with it.
+
 ## CSS Variables
 
 {: .note .my-6 }
-`--cute-toast-primary` and `--cute-toast-primary-light` are set according to `--cute-toast-color-{type}` and `--cute-toast-color-{type}-light` respectively
+`--cute-toast-primary` and `--cute-toast-primary-light` are set according to `--cute-toast-color-{type}` and `--cute-toast-color-{type}-light` respectively.
 
 | CSS Variable                       | Default Value                     |
 |:-----------------------------------|:----------------------------------|
