@@ -28,5 +28,14 @@ describe('vibrateUtils', () => {
 
       expect(mockVibrate).toHaveBeenCalledWith(pattern)
     })
+
+    it('should not trigger vibrate in case navigator does not have the vibrate function', () => {
+      navigator.vibrate = undefined
+      const pattern = 200
+
+      vibrate(pattern)
+
+      expect(mockVibrate).not.toHaveBeenCalled()
+    })
   })
 })

@@ -27,11 +27,18 @@ cuteAlert({
   description: 'Description',
   timer: 5000,
   primaryButtonText: 'Confirm',
-  secondaryButtonText: 'Cancel'
+  secondaryButtonText: 'Cancel',
+}).then((event) => {
+  if (event === 'primaryButtonClicked') {
+    console.log('primary button clicked')
+  }
 })
 ```
 
 [Storybook](https://gustavosmanc.github.io/cute-alert/storybook/?path=/story/cutealert-alert--playground){: .btn }
+
+{: .note }
+`event` has the `AlertResolveValue` type, meaning it can have one of the following values: `primaryButtonClicked`, `secondaryButtonClicked` or `close`. For more information about types, check out the [Typescript page](https://gustavosmanc.github.io/cute-alert/docs/typescript/).
 
 ## Options
 
@@ -54,10 +61,13 @@ cuteAlert({
 * [Vibrate](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate)
 * [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio)
 
+{: .warning }
+Vibration will not work on Safari as the `vibrate()` method is not compatible with it.
+
 ## CSS Variables
 
 {: .note .my-6 }
-`--cute-alert-primary` and `--cute-alert-primary-light` are set according to `--cute-alert-color-{type}` and `--cute-alert-color-{type}-light` respectively
+`--cute-alert-primary` and `--cute-alert-primary-light` are set according to `--cute-alert-color-{type}` and `--cute-alert-color-{type}-light` respectively.
 
 | CSS Variable                                     | Default Value                     |
 |:-------------------------------------------------|:----------------------------------|
