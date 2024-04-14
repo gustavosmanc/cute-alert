@@ -58,7 +58,7 @@
     "@tsconfig/node21": "21.0.3",
     "@types/jsdom": "21.1.6",
     "@types/node": "20.12.2",
-    "@vitest/coverage-v8": "1.4.0",
+    "@vitest/coverage-v8": "1.5.0",
     "auto-changelog": "2.4.0",
     "auto-prefixer": "0.4.2",
     "commitlint-plugin-function-rules": "4.0.0",
@@ -84,6 +84,6 @@
     "vite": "5.2.7",
     "vite-plugin-dts": "3.8.1",
     "vite-plugin-lib-inject-css": "2.0.1",
-    "vitest": "1.4.0"
+    "vitest": "1.5.0"
   }
 }
