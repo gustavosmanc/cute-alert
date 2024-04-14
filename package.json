@@ -80,7 +80,7 @@
     "release-it": "17.1.1",
     "sass": "1.72.0",
     "storybook": "8.0.5",
-    "typescript": "5.4.3",
+    "typescript": "5.4.5",
     "vite": "5.2.7",
     "vite-plugin-dts": "3.8.1",
     "vite-plugin-lib-inject-css": "2.0.1",
