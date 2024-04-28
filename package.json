@@ -49,7 +49,7 @@
     "@release-it/conventional-changelog": "8.0.1",
     "@storybook/addon-essentials": "8.0.5",
     "@storybook/addon-interactions": "8.0.5",
-    "@storybook/addon-links": "8.0.5",
+    "@storybook/addon-links": "8.0.9",
     "@storybook/blocks": "8.0.5",
     "@storybook/html": "8.0.5",
     "@storybook/html-vite": "8.0.5",
