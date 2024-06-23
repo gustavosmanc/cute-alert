@@ -51,7 +51,7 @@
     "@storybook/addon-interactions": "8.0.5",
     "@storybook/addon-links": "8.0.5",
     "@storybook/blocks": "8.0.5",
-    "@storybook/html": "8.0.5",
+    "@storybook/html": "8.1.10",
     "@storybook/html-vite": "8.0.5",
     "@storybook/test": "8.0.5",
     "@testing-library/dom": "9.3.4",
